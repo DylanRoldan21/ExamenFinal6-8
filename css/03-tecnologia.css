@@ -2,4 +2,17 @@
 .a3-seccion { background: var(--gris-claro); }
 .a3-rating { color: var(--amarillo); font-size: .9rem; letter-spacing: 1px; }
 .a3-rating span { color: var(--gris); font-size: .78rem; letter-spacing: 0; }
-.a3-cuotas { font-size: .8rem; color: var(--verde-oscuro); background: #e8f6ec; padding: 4px 8px; border-radius: 6px; }
+
+/* Recuadro de cuotas con estilo propio */
+.a3-cuotas {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #0b3d91;
+  background: #e6f0ff;
+  border-left: 4px solid #0b3d91;
+  padding: 6px 10px;
+  border-radius: 0 8px 8px 0;
+  margin: 6px 0;
+}
+
+.a3-envio { font-size: .8rem; font-weight: 700; color: var(--verde-oscuro); margin: 4px 0; }
