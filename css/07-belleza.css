@@ -1,0 +1,7 @@
+/* ALUMNO 7 - Belleza. Usa SOLO clases .a7- */
+.a7-seccion { background: #fdf2f6; }
+.a7-seccion .depto-titulo { color: #b0306a; }
+.a7-favoritos { margin: -8px 0 16px; color: var(--gris); }
+.a7-fav { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: #fff; font-size: 1.1rem; cursor: pointer; box-shadow: 0 3px 10px rgba(0, 0, 0, .12); transition: .2s; }
+.a7-fav:hover { transform: scale(1.1); }
+.a7-fav.activo { color: #e0115f; }

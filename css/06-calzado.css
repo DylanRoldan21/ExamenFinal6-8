@@ -1,0 +1,4 @@
+/* ALUMNO 6 - Calzado. Usa SOLO clases .a6- */
+.a6-seccion { background: var(--blanco); }
+.a6-talla { padding: 8px 10px; border: 1px solid var(--borde); border-radius: 8px; background: #fff; cursor: pointer; font-size: .85rem; }
+.a6-talla.a6-error { border-color: var(--rojo); box-shadow: 0 0 0 3px rgba(228, 0, 43, .15); }

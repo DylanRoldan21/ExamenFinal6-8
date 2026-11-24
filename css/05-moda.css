@@ -1,0 +1,6 @@
+/* ALUMNO 5 - Moda. Usa SOLO clases .a5- */
+.a5-seccion { background: var(--gris-claro); }
+.a5-tallas { display: flex; gap: 6px; }
+.a5-tallas button { min-width: 36px; height: 32px; border: 1px solid var(--borde); background: #fff; border-radius: 6px; cursor: pointer; font-size: .8rem; transition: .2s; }
+.a5-tallas button:hover { border-color: var(--oscuro); }
+.a5-tallas button.activo { background: var(--oscuro); color: #fff; border-color: var(--oscuro); }

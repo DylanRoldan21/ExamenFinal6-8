@@ -1,0 +1,7 @@
+/* ALUMNO 8 - Deporte. Usa SOLO clases .a8- */
+.a8-seccion { background: linear-gradient(180deg, var(--gris-claro), #e6f0ff); }
+.a8-seccion .filtro.activo { background: #1e63c9; border-color: #1e63c9; }
+.a8-colores { display: flex; gap: 8px; }
+.a8-color { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--borde); cursor: pointer; transition: .2s; }
+.a8-color.activo { box-shadow: 0 0 0 2px var(--oscuro); transform: scale(1.1); }
+.a8-color-texto { font-size: .8rem; color: var(--gris); }

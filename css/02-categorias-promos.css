@@ -1,0 +1,26 @@
+/* ALUMNO 2 - Categorías + Promociones + Cupón. Usa SOLO clases .a2- */
+.a2-seccion { background: var(--blanco); }
+.a2-titulo { font-size: 1.6rem; font-weight: 900; margin-bottom: 22px; }
+.a2-circulos { display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; margin-bottom: 36px; }
+.a2-cat { text-align: center; }
+.a2-icono { width: 92px; height: 92px; margin: 0 auto 8px; border-radius: 50%; background: var(--gris-claro); display: grid; place-items: center; font-size: 2.4rem; border: 2px solid transparent; transition: .25s; }
+.a2-cat:hover .a2-icono { border-color: var(--verde); transform: translateY(-4px); background: #e8f6ec; }
+.a2-cat p { font-size: .88rem; font-weight: 700; }
+
+.a2-promos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+.a2-promo { border-radius: var(--radio); overflow: hidden; }
+.a2-promo img { width: 100%; aspect-ratio: 15 / 8; object-fit: cover; transition: .35s; }
+.a2-promo:hover img { transform: scale(1.04); }
+
+.a2-cupon { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 24px 28px; border: 2px dashed var(--verde); border-radius: var(--radio); background: #f2fbf4; }
+.a2-cupon-mini { font-size: .75rem; font-weight: 900; letter-spacing: 2px; color: var(--verde); }
+.a2-cupon h3 { font-size: 1.3rem; }
+.a2-cupon p { color: var(--gris); font-size: .9rem; }
+.a2-codigo { display: flex; align-items: center; gap: 12px; }
+.a2-codigo span { font-size: 1.4rem; font-weight: 900; letter-spacing: 3px; background: #fff; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--borde); }
+
+@media (max-width: 900px) {
+  .a2-circulos { grid-template-columns: repeat(4, 1fr); }
+  .a2-promos { grid-template-columns: 1fr; }
+  .a2-icono { width: 70px; height: 70px; font-size: 1.8rem; }
+}

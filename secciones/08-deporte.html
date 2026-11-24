@@ -1,0 +1,145 @@
+<!-- ======================= ALUMNO 8: DEPORTE ======================= -->
+<section class="seccion a8-seccion" id="deporte">
+  <div class="contenedor">
+    <div class="depto-cabecera">
+      <div>
+        <h2 class="depto-titulo">⚽ Deporte</h2>
+        <p class="depto-subtitulo">Fitness, ciclismo, fútbol y aventura al aire libre.</p>
+      </div>
+      <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro activo" data-filtro="todo">Todo</button>
+      <button class="filtro" data-filtro="fitness">Fitness</button>
+      <button class="filtro" data-filtro="ciclismo">Ciclismo</button>
+      <button class="filtro" data-filtro="futbol">Fútbol</button>
+      <button class="filtro" data-filtro="outdoor">Outdoor</button>
+    </div>
+
+    <!--
+      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
+        data-nombre    = nombre que va al carrito
+        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
+        data-categoria = IGUAL al data-filtro de un botón de arriba
+      El nombre y el precio también se escriben en el texto visible (h3 y p).
+      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
+    -->
+    <!-- COLORES: <button class="a8-color" data-color="Nombre" style="background:#código">. El primero lleva "activo". -->
+    <div class="grid-productos" id="a8-grid">
+      <article class="producto" data-categoria="fitness" data-nombre="Mancuernas Hexagonales 10kg (par)" data-precio="149.90">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte1.svg" alt="Mancuernas Hexagonales 10kg (par)">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">EVERLAST</p>
+          <h3 class="producto-nombre">Mancuernas Hexagonales 10kg (par)</h3>
+          <p class="producto-precio">S/ 149.90</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Negro" style="background:#222" aria-label="Negro"></button></div>
+          <p class="a8-color-texto">Color: Negro</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="fitness" data-nombre="Mat de Yoga 6mm" data-precio="59.90">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte2.svg" alt="Mat de Yoga 6mm">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ATHLETIC</p>
+          <h3 class="producto-nombre">Mat de Yoga 6mm</h3>
+          <p class="producto-precio">S/ 59.90</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Morado" style="background:#7e57c2" aria-label="Morado"></button><button class="a8-color" data-color="Celeste" style="background:#4fc3f7" aria-label="Celeste"></button><button class="a8-color" data-color="Negro" style="background:#222" aria-label="Negro"></button></div>
+          <p class="a8-color-texto">Color: Morado</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="ciclismo" data-nombre="Bicicleta Montañera Aro 29" data-precio="1299.00">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte3.svg" alt="Bicicleta Montañera Aro 29">
+          <span class="producto-etiqueta">-20%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">MONARK</p>
+          <h3 class="producto-nombre">Bicicleta Montañera Aro 29</h3>
+          <p class="producto-precio">S/ 1299.00</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Rojo" style="background:#e4002b" aria-label="Rojo"></button><button class="a8-color" data-color="Negro" style="background:#222" aria-label="Negro"></button></div>
+          <p class="a8-color-texto">Color: Rojo</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="ciclismo" data-nombre="Casco de Ciclismo Regulable" data-precio="119.90">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte4.svg" alt="Casco de Ciclismo Regulable">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">GW</p>
+          <h3 class="producto-nombre">Casco de Ciclismo Regulable</h3>
+          <p class="producto-precio">S/ 119.90</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button><button class="a8-color" data-color="Negro" style="background:#222" aria-label="Negro"></button><button class="a8-color" data-color="Verde" style="background:#2e9e4a" aria-label="Verde"></button></div>
+          <p class="a8-color-texto">Color: Blanco</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="futbol" data-nombre="Pelota de Fútbol N°5" data-precio="99.90">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte5.svg" alt="Pelota de Fútbol N°5">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ADIDAS</p>
+          <h3 class="producto-nombre">Pelota de Fútbol N°5</h3>
+          <p class="producto-precio">S/ 99.90</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button><button class="a8-color" data-color="Amarillo" style="background:#ffc107" aria-label="Amarillo"></button></div>
+          <p class="a8-color-texto">Color: Blanco</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="futbol" data-nombre="Canilleras Charge" data-precio="59.90">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte6.svg" alt="Canilleras Charge">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NIKE</p>
+          <h3 class="producto-nombre">Canilleras Charge</h3>
+          <p class="producto-precio">S/ 59.90</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Negro" style="background:#222" aria-label="Negro"></button><button class="a8-color" data-color="Azul" style="background:#1e63c9" aria-label="Azul"></button></div>
+          <p class="a8-color-texto">Color: Negro</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="outdoor" data-nombre="Carpa para 4 Personas" data-precio="399.00">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte7.svg" alt="Carpa para 4 Personas">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">DOITE</p>
+          <h3 class="producto-nombre">Carpa para 4 Personas</h3>
+          <p class="producto-precio">S/ 399.00</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Verde" style="background:#2e7d32" aria-label="Verde"></button><button class="a8-color" data-color="Naranja" style="background:#fb8c00" aria-label="Naranja"></button></div>
+          <p class="a8-color-texto">Color: Verde</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="outdoor" data-nombre="Mochila Trekking 40L" data-precio="459.00">
+        <div class="producto-foto">
+          <img src="img/alumno8/deporte8.svg" alt="Mochila Trekking 40L">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">THE NORTH FACE</p>
+          <h3 class="producto-nombre">Mochila Trekking 40L</h3>
+          <p class="producto-precio">S/ 459.00</p>
+          <div class="a8-colores"><button class="a8-color activo" data-color="Negro" style="background:#222" aria-label="Negro"></button><button class="a8-color" data-color="Azul" style="background:#1e63c9" aria-label="Azul"></button></div>
+          <p class="a8-color-texto">Color: Negro</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

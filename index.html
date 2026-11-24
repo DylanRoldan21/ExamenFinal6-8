@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaTienda | Tecnología, electrohogar, moda y más</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- BASE: NO TOCAR (profesor) -->
+  <link rel="stylesheet" href="css/base.css">
+
+  <!-- Un CSS por alumno: cada alumno edita SOLO el suyo -->
+  <link rel="stylesheet" href="css/01-header-banner.css">
+  <link rel="stylesheet" href="css/02-categorias-promos.css">
+  <link rel="stylesheet" href="css/03-tecnologia.css">
+  <link rel="stylesheet" href="css/04-electrohogar.css">
+  <link rel="stylesheet" href="css/05-moda.css">
+  <link rel="stylesheet" href="css/06-calzado.css">
+  <link rel="stylesheet" href="css/07-belleza.css">
+  <link rel="stylesheet" href="css/08-deporte.css">
+  <link rel="stylesheet" href="css/09-cyber.css">
+  <link rel="stylesheet" href="css/10-footer.css">
+</head>
+<body>
+  <!-- ESTE ARCHIVO NO SE EDITA. Cada bloque carga una sección de la carpeta /secciones -->
+    <div data-include="secciones/01-header-banner.html"></div>          <!-- Alumno 1: header + banner -->
+  <main>
+    <div data-include="secciones/02-categorias-promos.html"></div>      <!-- Alumno 2: categorías + promociones -->
+    <div data-include="secciones/03-tecnologia.html"></div>             <!-- Alumno 3: tecnología -->
+    <div data-include="secciones/04-electrohogar.html"></div>           <!-- Alumno 4: electrohogar -->
+    <div data-include="secciones/05-moda.html"></div>                   <!-- Alumno 5: moda -->
+    <div data-include="secciones/06-calzado.html"></div>                <!-- Alumno 6: calzado -->
+    <div data-include="secciones/07-belleza.html"></div>                <!-- Alumno 7: belleza -->
+    <div data-include="secciones/08-deporte.html"></div>                <!-- Alumno 8: deporte -->
+    <div data-include="secciones/09-cyber.html"></div>                  <!-- Alumno 9: cyber ofertas -->
+  </main>
+    <div data-include="secciones/10-footer.html"></div>                 <!-- Alumno 10: footer -->
+
+  <!-- NO TOCAR: carrito compartido y cargador de secciones -->
+  <script src="js/tienda.js"></script>
+  <script src="js/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Carpeta de imágenes del ALUMNO 7.
+1. Guarda aquí tus fotos (.jpg, .png o .webp).
+2. Nombres en minúscula, sin espacios ni tildes: laptop-hp.jpg
+3. En tu HTML la ruta es: img/alumno7/laptop-hp.jpg
+4. La extensión (.jpg / .png) debe ser EXACTAMENTE la del archivo.
+5. Puedes borrar los .svg de ejemplo cuando ya no los uses.

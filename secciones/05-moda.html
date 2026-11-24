@@ -1,0 +1,136 @@
+<!-- ======================= ALUMNO 5: MODA ======================= -->
+<section class="seccion a5-seccion" id="moda">
+  <div class="contenedor">
+    <div class="depto-cabecera">
+      <div>
+        <h2 class="depto-titulo">👕 Moda</h2>
+        <p class="depto-subtitulo">Ropa para hombre, mujer y niños. Elige tu talla y agrégala al carro.</p>
+      </div>
+      <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro activo" data-filtro="todo">Todo</button>
+      <button class="filtro" data-filtro="hombre">Hombre</button>
+      <button class="filtro" data-filtro="mujer">Mujer</button>
+      <button class="filtro" data-filtro="ninos">Niños</button>
+    </div>
+
+    <!--
+      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
+        data-nombre    = nombre que va al carrito
+        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
+        data-categoria = IGUAL al data-filtro de un botón de arriba
+      El nombre y el precio también se escriben en el texto visible (h3 y p).
+      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
+    -->
+    <div class="grid-productos" id="a5-grid">
+      <article class="producto" data-categoria="hombre" data-nombre="Polo Básico Algodón Hombre" data-precio="39.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda1.svg" alt="Polo Básico Algodón Hombre">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">BASEMENT</p>
+          <h3 class="producto-nombre">Polo Básico Algodón Hombre</h3>
+          <p class="producto-precio">S/ 39.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="hombre" data-nombre="Jean Slim Fit Hombre" data-precio="119.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda2.svg" alt="Jean Slim Fit Hombre">
+          <span class="producto-etiqueta">-30%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NEWPORT</p>
+          <h3 class="producto-nombre">Jean Slim Fit Hombre</h3>
+          <p class="producto-precio">S/ 119.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="hombre" data-nombre="Casaca Denim Hombre" data-precio="159.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda3.svg" alt="Casaca Denim Hombre">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">AMERICANINO</p>
+          <h3 class="producto-nombre">Casaca Denim Hombre</h3>
+          <p class="producto-precio">S/ 159.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="mujer" data-nombre="Vestido Midi Estampado" data-precio="99.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda4.svg" alt="Vestido Midi Estampado">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">SYBILLA</p>
+          <h3 class="producto-nombre">Vestido Midi Estampado</h3>
+          <p class="producto-precio">S/ 99.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="mujer" data-nombre="Blusa Satinada Mujer" data-precio="89.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda5.svg" alt="Blusa Satinada Mujer">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">MANGO</p>
+          <h3 class="producto-nombre">Blusa Satinada Mujer</h3>
+          <p class="producto-precio">S/ 89.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="mujer" data-nombre="Jean Wide Leg Mujer" data-precio="129.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda6.svg" alt="Jean Wide Leg Mujer">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">UNIQLO</p>
+          <h3 class="producto-nombre">Jean Wide Leg Mujer</h3>
+          <p class="producto-precio">S/ 129.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="ninos" data-nombre="Conjunto Deportivo Niño" data-precio="69.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda7.svg" alt="Conjunto Deportivo Niño">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">YAMP</p>
+          <h3 class="producto-nombre">Conjunto Deportivo Niño</h3>
+          <p class="producto-precio">S/ 69.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="ninos" data-nombre="Vestido Floral Niña" data-precio="59.90">
+        <div class="producto-foto">
+          <img src="img/alumno5/moda8.svg" alt="Vestido Floral Niña">
+          <span class="producto-etiqueta">-20%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">YAMP</p>
+          <h3 class="producto-nombre">Vestido Floral Niña</h3>
+          <p class="producto-precio">S/ 59.90</p>
+          <div class="a5-tallas"><button>S</button><button>M</button><button>L</button><button>XL</button></div>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,146 @@
+<!-- ======================= ALUMNO 3: TECNOLOGÍA ======================= -->
+<section class="seccion a3-seccion" id="tecnologia">
+  <div class="contenedor">
+    <div class="depto-cabecera">
+      <div>
+        <h2 class="depto-titulo">💻 Tecnología</h2>
+        <p class="depto-subtitulo">Televisores, laptops, celulares y audio con hasta 12 cuotas sin intereses.</p>
+      </div>
+      <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro activo" data-filtro="todo">Todo</button>
+      <button class="filtro" data-filtro="televisores">Televisores</button>
+      <button class="filtro" data-filtro="laptops">Laptops</button>
+      <button class="filtro" data-filtro="celulares">Celulares</button>
+      <button class="filtro" data-filtro="audio">Audio</button>
+    </div>
+
+    <!--
+      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
+        data-nombre    = nombre que va al carrito
+        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
+        data-categoria = IGUAL al data-filtro de un botón de arriba
+      El nombre y el precio también se escriben en el texto visible (h3 y p).
+      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
+    -->
+    <!-- data-estrellas = calificación de 1 a 5. Las cuotas las calcula el JavaScript solo. -->
+    <div class="grid-productos" id="a3-grid">
+      <article class="producto" data-categoria="televisores" data-nombre="Smart TV 55&quot; 4K UHD Crystal" data-precio="1899.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno1.svg" alt="Smart TV 55&quot; 4K UHD Crystal">
+          <span class="producto-etiqueta">-25%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">SAMSUNG</p>
+          <h3 class="producto-nombre">Smart TV 55" 4K UHD Crystal</h3>
+          <p class="producto-precio">S/ 1899.00</p>
+          <p class="a3-rating" data-estrellas="5">★★★★★ <span>(128)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="televisores" data-nombre="Smart TV 43&quot; Full HD webOS" data-precio="1199.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno2.svg" alt="Smart TV 43&quot; Full HD webOS">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">LG</p>
+          <h3 class="producto-nombre">Smart TV 43" Full HD webOS</h3>
+          <p class="producto-precio">S/ 1199.00</p>
+          <p class="a3-rating" data-estrellas="4">★★★★★ <span>(64)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="laptops" data-nombre="Laptop IdeaPad 15&quot; Ryzen 5 16GB" data-precio="2499.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno3.svg" alt="Laptop IdeaPad 15&quot; Ryzen 5 16GB">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">LENOVO</p>
+          <h3 class="producto-nombre">Laptop IdeaPad 15" Ryzen 5 16GB</h3>
+          <p class="producto-precio">S/ 2499.00</p>
+          <p class="a3-rating" data-estrellas="5">★★★★★ <span>(87)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="laptops" data-nombre="Laptop 14&quot; Intel Core i3 8GB" data-precio="1699.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno4.svg" alt="Laptop 14&quot; Intel Core i3 8GB">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">HP</p>
+          <h3 class="producto-nombre">Laptop 14" Intel Core i3 8GB</h3>
+          <p class="producto-precio">S/ 1699.00</p>
+          <p class="a3-rating" data-estrellas="4">★★★★★ <span>(41)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="celulares" data-nombre="Celular Redmi Note 13 256GB" data-precio="899.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno5.svg" alt="Celular Redmi Note 13 256GB">
+          <span class="producto-etiqueta">-15%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">XIAOMI</p>
+          <h3 class="producto-nombre">Celular Redmi Note 13 256GB</h3>
+          <p class="producto-precio">S/ 899.00</p>
+          <p class="a3-rating" data-estrellas="5">★★★★★ <span>(230)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="celulares" data-nombre="Celular Moto G84 256GB" data-precio="1049.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno6.svg" alt="Celular Moto G84 256GB">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">MOTOROLA</p>
+          <h3 class="producto-nombre">Celular Moto G84 256GB</h3>
+          <p class="producto-precio">S/ 1049.00</p>
+          <p class="a3-rating" data-estrellas="4">★★★★★ <span>(96)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="audio" data-nombre="Parlante Bluetooth Flip 6" data-precio="449.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno7.svg" alt="Parlante Bluetooth Flip 6">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">JBL</p>
+          <h3 class="producto-nombre">Parlante Bluetooth Flip 6</h3>
+          <p class="producto-precio">S/ 449.00</p>
+          <p class="a3-rating" data-estrellas="5">★★★★★ <span>(152)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="audio" data-nombre="Audífonos Inalámbricos WH-CH520" data-precio="229.00">
+        <div class="producto-foto">
+          <img src="img/alumno3/tecno8.svg" alt="Audífonos Inalámbricos WH-CH520">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">SONY</p>
+          <h3 class="producto-nombre">Audífonos Inalámbricos WH-CH520</h3>
+          <p class="producto-precio">S/ 229.00</p>
+          <p class="a3-rating" data-estrellas="4">★★★★★ <span>(73)</span></p>
+          <p class="a3-cuotas"></p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,140 @@
+<!-- ======================= ALUMNO 4: ELECTROHOGAR ======================= -->
+<section class="seccion a4-seccion" id="electro">
+  <div class="contenedor">
+    <div class="depto-cabecera">
+      <div>
+        <h2 class="depto-titulo">🧊 Electrohogar</h2>
+        <p class="depto-subtitulo">Refrigeradoras, lavadoras, cocinas y pequeños electrodomésticos.</p>
+      </div>
+      <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
+    </div>
+
+    <div class="a4-barra">
+    <div class="filtros">
+      <button class="filtro activo" data-filtro="todo">Todo</button>
+      <button class="filtro" data-filtro="refrigeradoras">Refrigeradoras</button>
+      <button class="filtro" data-filtro="lavado">Lavado</button>
+      <button class="filtro" data-filtro="cocina">Cocina</button>
+      <button class="filtro" data-filtro="pequenos">Pequeños electro</button>
+    </div>
+      <div class="a4-orden">
+        <span class="a4-cantidad" id="a4-cantidad">8 productos</span>
+        <select id="a4-orden" aria-label="Ordenar">
+          <option value="normal">Recomendados</option>
+          <option value="menor">Precio: menor a mayor</option>
+          <option value="mayor">Precio: mayor a menor</option>
+        </select>
+      </div>
+    </div>
+
+    <!--
+      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
+        data-nombre    = nombre que va al carrito
+        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
+        data-categoria = IGUAL al data-filtro de un botón de arriba
+      El nombre y el precio también se escriben en el texto visible (h3 y p).
+      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
+    -->
+    <!-- data-orden = posición original (1, 2, 3...). Si agregas productos, continúa la numeración. -->
+    <div class="grid-productos" id="a4-grid">
+      <article class="producto" data-categoria="refrigeradoras" data-nombre="Refrigeradora No Frost 420L" data-precio="2299.00" data-orden="1">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro1.svg" alt="Refrigeradora No Frost 420L">
+          <span class="producto-etiqueta">-20%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">LG</p>
+          <h3 class="producto-nombre">Refrigeradora No Frost 420L</h3>
+          <p class="producto-precio">S/ 2299.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="refrigeradoras" data-nombre="Refrigeradora Side by Side 600L" data-precio="4599.00" data-orden="2">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro2.svg" alt="Refrigeradora Side by Side 600L">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">SAMSUNG</p>
+          <h3 class="producto-nombre">Refrigeradora Side by Side 600L</h3>
+          <p class="producto-precio">S/ 4599.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="lavado" data-nombre="Lavadora Carga Superior 18kg" data-precio="1499.00" data-orden="3">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro3.svg" alt="Lavadora Carga Superior 18kg">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">WHIRLPOOL</p>
+          <h3 class="producto-nombre">Lavadora Carga Superior 18kg</h3>
+          <p class="producto-precio">S/ 1499.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="lavado" data-nombre="Lavaseca 17kg Inverter" data-precio="2799.00" data-orden="4">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro4.svg" alt="Lavaseca 17kg Inverter">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">MABE</p>
+          <h3 class="producto-nombre">Lavaseca 17kg Inverter</h3>
+          <p class="producto-precio">S/ 2799.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="cocina" data-nombre="Cocina a Gas 6 Hornillas" data-precio="1199.00" data-orden="5">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro5.svg" alt="Cocina a Gas 6 Hornillas">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">INDURAMA</p>
+          <h3 class="producto-nombre">Cocina a Gas 6 Hornillas</h3>
+          <p class="producto-precio">S/ 1199.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="cocina" data-nombre="Microondas 25L Digital" data-precio="379.00" data-orden="6">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro6.svg" alt="Microondas 25L Digital">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">OSTER</p>
+          <h3 class="producto-nombre">Microondas 25L Digital</h3>
+          <p class="producto-precio">S/ 379.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="pequenos" data-nombre="Licuadora 1.5L 600W" data-precio="199.00" data-orden="7">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro7.svg" alt="Licuadora 1.5L 600W">
+          <span class="producto-etiqueta">-10%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">OSTER</p>
+          <h3 class="producto-nombre">Licuadora 1.5L 600W</h3>
+          <p class="producto-precio">S/ 199.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="pequenos" data-nombre="Freidora de Aire 4L" data-precio="259.00" data-orden="8">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro8.svg" alt="Freidora de Aire 4L">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">IMACO</p>
+          <h3 class="producto-nombre">Freidora de Aire 4L</h3>
+          <p class="producto-precio">S/ 259.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

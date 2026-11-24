@@ -1,0 +1,17 @@
+/* ALUMNO 9 - Cyber ofertas. Usa SOLO clases .a9- */
+.a9-seccion { background: linear-gradient(135deg, #1a0008, #7a0019 60%, #e4002b); color: #fff; }
+.a9-seccion .producto { color: var(--oscuro); border: 0; }
+.a9-cabecera { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+.a9-mini { font-weight: 900; letter-spacing: 3px; font-size: .85rem; color: #ffd0d8; }
+.a9-titulo { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 900; line-height: 1; font-style: italic; }
+.a9-sub { opacity: .85; }
+.a9-contador { display: flex; gap: 10px; }
+.a9-contador div { background: #fff; color: var(--rojo); border-radius: 10px; padding: 10px 14px; min-width: 72px; text-align: center; }
+.a9-contador span { display: block; font-size: 1.8rem; font-weight: 900; line-height: 1.1; }
+.a9-contador small { font-size: .68rem; letter-spacing: 1px; text-transform: uppercase; color: var(--oscuro); }
+.a9-ahora { color: var(--rojo); }
+.a9-stock { height: 8px; background: #f1d3d9; border-radius: 999px; overflow: hidden; }
+.a9-stock-barra { height: 100%; width: 100%; background: var(--rojo); transition: width .4s; }
+.a9-stock-texto { font-size: .8rem; font-weight: 700; color: var(--rojo); }
+.a9-seccion .btn-agregar { background: var(--rojo); }
+.a9-seccion .btn-agregar:hover { background: #a8001f; }

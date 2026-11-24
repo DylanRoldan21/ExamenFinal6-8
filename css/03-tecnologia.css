@@ -1,0 +1,5 @@
+/* ALUMNO 3 - Tecnología. Usa SOLO clases .a3- */
+.a3-seccion { background: var(--gris-claro); }
+.a3-rating { color: var(--amarillo); font-size: .9rem; letter-spacing: 1px; }
+.a3-rating span { color: var(--gris); font-size: .78rem; letter-spacing: 0; }
+.a3-cuotas { font-size: .8rem; color: var(--verde-oscuro); background: #e8f6ec; padding: 4px 8px; border-radius: 6px; }

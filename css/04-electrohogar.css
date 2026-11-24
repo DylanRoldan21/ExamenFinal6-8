@@ -1,0 +1,7 @@
+/* ALUMNO 4 - Electrohogar. Usa SOLO clases .a4- */
+.a4-seccion { background: var(--blanco); }
+.a4-barra { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.a4-barra .filtros { margin: 0; }
+.a4-orden { display: flex; align-items: center; gap: 12px; }
+.a4-orden select { padding: 8px 12px; border: 1px solid var(--borde); border-radius: 8px; background: #fff; cursor: pointer; }
+.a4-cantidad { color: var(--gris); font-size: .85rem; }

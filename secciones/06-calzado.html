@@ -1,0 +1,170 @@
+<!-- ======================= ALUMNO 6: CALZADO ======================= -->
+<section class="seccion a6-seccion" id="calzado">
+  <div class="contenedor">
+    <div class="depto-cabecera">
+      <div>
+        <h2 class="depto-titulo">👟 Calzado</h2>
+        <p class="depto-subtitulo">Zapatillas, zapatos, sandalias y botas para toda ocasión.</p>
+      </div>
+      <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro activo" data-filtro="todo">Todo</button>
+      <button class="filtro" data-filtro="zapatillas">Zapatillas</button>
+      <button class="filtro" data-filtro="zapatos">Zapatos</button>
+      <button class="filtro" data-filtro="sandalias">Sandalias</button>
+      <button class="filtro" data-filtro="botas">Botas</button>
+    </div>
+
+    <!--
+      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
+        data-nombre    = nombre que va al carrito
+        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
+        data-categoria = IGUAL al data-filtro de un botón de arriba
+      El nombre y el precio también se escriben en el texto visible (h3 y p).
+      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
+    -->
+    <!-- Las tallas están en el <select class="a6-talla">. Puedes quitar o agregar <option>. -->
+    <div class="grid-productos" id="a6-grid">
+      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Urbanas Court Vision" data-precio="329.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado1.svg" alt="Zapatillas Urbanas Court Vision">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NIKE</p>
+          <h3 class="producto-nombre">Zapatillas Urbanas Court Vision</h3>
+          <p class="producto-precio">S/ 329.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Running Duramo" data-precio="279.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado2.svg" alt="Zapatillas Running Duramo">
+          <span class="producto-etiqueta">-20%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ADIDAS</p>
+          <h3 class="producto-nombre">Zapatillas Running Duramo</h3>
+          <p class="producto-precio">S/ 279.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Smash Unisex" data-precio="219.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado3.svg" alt="Zapatillas Smash Unisex">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">PUMA</p>
+          <h3 class="producto-nombre">Zapatillas Smash Unisex</h3>
+          <p class="producto-precio">S/ 219.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatos" data-nombre="Zapatos de Cuero Hombre" data-precio="249.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado4.svg" alt="Zapatos de Cuero Hombre">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">HUSH PUPPIES</p>
+          <h3 class="producto-nombre">Zapatos de Cuero Hombre</h3>
+          <p class="producto-precio">S/ 249.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatos" data-nombre="Zapatos Taco Mujer" data-precio="189.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado5.svg" alt="Zapatos Taco Mujer">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">VIZZANO</p>
+          <h3 class="producto-nombre">Zapatos Taco Mujer</h3>
+          <p class="producto-precio">S/ 189.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="sandalias" data-nombre="Sandalias Brasil" data-precio="69.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado6.svg" alt="Sandalias Brasil">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">HAVAIANAS</p>
+          <h3 class="producto-nombre">Sandalias Brasil</h3>
+          <p class="producto-precio">S/ 69.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="botas" data-nombre="Botines de Seguridad" data-precio="299.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado7.svg" alt="Botines de Seguridad">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">CAT</p>
+          <h3 class="producto-nombre">Botines de Seguridad</h3>
+          <p class="producto-precio">S/ 299.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="botas" data-nombre="Botas Mujer Caña Alta" data-precio="229.90">
+        <div class="producto-foto">
+          <img src="img/alumno6/calzado8.svg" alt="Botas Mujer Caña Alta">
+          <span class="producto-etiqueta">-15%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">BATA</p>
+          <h3 class="producto-nombre">Botas Mujer Caña Alta</h3>
+          <p class="producto-precio">S/ 229.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>36</option><option>37</option><option>38</option><option>39</option>
+            <option>40</option><option>41</option><option>42</option><option>43</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

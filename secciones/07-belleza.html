@@ -1,0 +1,138 @@
+<!-- ======================= ALUMNO 7: BELLEZA Y CUIDADO PERSONAL ======================= -->
+<section class="seccion a7-seccion" id="belleza">
+  <div class="contenedor">
+    <div class="depto-cabecera">
+      <div>
+        <h2 class="depto-titulo">💄 Belleza y cuidado personal</h2>
+        <p class="depto-subtitulo">Maquillaje, perfumes, cuidado de la piel y del cabello.</p>
+      </div>
+      <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
+    </div>
+    <p class="a7-favoritos">❤️ Mis favoritos: <strong id="a7-favoritos">0</strong></p>
+
+    <div class="filtros">
+      <button class="filtro activo" data-filtro="todo">Todo</button>
+      <button class="filtro" data-filtro="maquillaje">Maquillaje</button>
+      <button class="filtro" data-filtro="perfumes">Perfumes</button>
+      <button class="filtro" data-filtro="piel">Cuidado de la piel</button>
+      <button class="filtro" data-filtro="cabello">Cabello</button>
+    </div>
+
+    <!--
+      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
+        data-nombre    = nombre que va al carrito
+        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
+        data-categoria = IGUAL al data-filtro de un botón de arriba
+      El nombre y el precio también se escriben en el texto visible (h3 y p).
+      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
+    -->
+    <div class="grid-productos" id="a7-grid">
+      <article class="producto" data-categoria="maquillaje" data-nombre="Base de Maquillaje Infallible 30ml" data-precio="69.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza1.svg" alt="Base de Maquillaje Infallible 30ml">
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">L'ORÉAL</p>
+          <h3 class="producto-nombre">Base de Maquillaje Infallible 30ml</h3>
+          <p class="producto-precio">S/ 69.90</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="maquillaje" data-nombre="Máscara de Pestañas Sky High" data-precio="54.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza2.svg" alt="Máscara de Pestañas Sky High">
+          <span class="producto-etiqueta">NUEVO</span>
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">MAYBELLINE</p>
+          <h3 class="producto-nombre">Máscara de Pestañas Sky High</h3>
+          <p class="producto-precio">S/ 54.90</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="perfumes" data-nombre="Perfume Good Girl EDP 80ml" data-precio="459.00">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza3.svg" alt="Perfume Good Girl EDP 80ml">
+          <span class="producto-etiqueta">-15%</span>
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">CAROLINA HERRERA</p>
+          <h3 class="producto-nombre">Perfume Good Girl EDP 80ml</h3>
+          <p class="producto-precio">S/ 459.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="perfumes" data-nombre="Perfume The Icon EDT 100ml" data-precio="189.00">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza4.svg" alt="Perfume The Icon EDT 100ml">
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ANTONIO BANDERAS</p>
+          <h3 class="producto-nombre">Perfume The Icon EDT 100ml</h3>
+          <p class="producto-precio">S/ 189.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="piel" data-nombre="Protector Solar Anthelios FPS 50" data-precio="89.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza5.svg" alt="Protector Solar Anthelios FPS 50">
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">LA ROCHE-POSAY</p>
+          <h3 class="producto-nombre">Protector Solar Anthelios FPS 50</h3>
+          <p class="producto-precio">S/ 89.90</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="piel" data-nombre="Crema Hidratante 340g" data-precio="79.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza6.svg" alt="Crema Hidratante 340g">
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">CERAVE</p>
+          <h3 class="producto-nombre">Crema Hidratante 340g</h3>
+          <p class="producto-precio">S/ 79.90</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="cabello" data-nombre="Shampoo Restauración 750ml" data-precio="29.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza7.svg" alt="Shampoo Restauración 750ml">
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">PANTENE</p>
+          <h3 class="producto-nombre">Shampoo Restauración 750ml</h3>
+          <p class="producto-precio">S/ 29.90</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="cabello" data-nombre="Plancha de Cabello Cerámica" data-precio="149.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/belleza8.svg" alt="Plancha de Cabello Cerámica">
+          <span class="producto-etiqueta">-20%</span>
+          <button class="a7-fav" aria-label="Favorito">♡</button>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">REMINGTON</p>
+          <h3 class="producto-nombre">Plancha de Cabello Cerámica</h3>
+          <p class="producto-precio">S/ 149.90</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+<!-- ======================= ALUMNO 1: HEADER + BUSCADOR + CARRITO + BANNER ======================= -->
+<div class="a1-top">
+  <div class="contenedor a1-top-fila">
+    <span>📦 Despacho gratis por compras desde S/ 99</span>
+    <nav>
+      <a href="#ayuda">Tiendas</a>
+      <a href="#ayuda">Ayuda</a>
+      <a href="#ayuda">Vende con nosotros</a>
+    </nav>
+  </div>
+</div>
+
+<header class="a1-header" id="inicio">
+  <div class="contenedor a1-barra">
+    <a href="#inicio" class="a1-logo">Mega<span>Tienda</span></a>
+
+    <button class="a1-menu-btn" aria-label="Menú de categorías">☰ <span>Menú</span></button>
+
+    <!-- Buscador: busca en los nombres de TODOS los productos de la página -->
+    <form class="a1-buscador" id="a1-buscador">
+      <input type="search" id="a1-busqueda" placeholder="¿Qué buscas hoy?">
+      <button type="submit" aria-label="Buscar">🔍</button>
+    </form>
+
+    <button class="a1-usuario" id="a1-usuario">👤 <span>Hola,<br><b>Inicia sesión</b></span></button>
+    <button class="a1-carrito-btn" aria-label="Ver carro">🛒<span class="a1-contador" id="a1-contador">0</span></button>
+  </div>
+
+  <!-- Menú de departamentos -->
+  <nav class="a1-departamentos">
+    <div class="contenedor">
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#electro">Electrohogar</a>
+      <a href="#moda">Moda</a>
+      <a href="#calzado">Calzado</a>
+      <a href="#belleza">Belleza</a>
+      <a href="#deporte">Deporte</a>
+      <a href="#cyber" class="a1-cyber">🔥 Cyber</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Panel lateral del carro -->
+<aside class="a1-panel" id="a1-panel">
+  <div class="a1-panel-cabecera">
+    <h3>Mi carro</h3>
+    <button class="a1-cerrar" aria-label="Cerrar">✕</button>
+  </div>
+  <ul class="a1-lista" id="a1-lista">
+    <li class="a1-vacio">Tu carro está vacío</li>
+  </ul>
+  <div class="a1-total">Total: <strong id="a1-total">S/ 0.00</strong></div>
+  <a href="#ayuda" class="btn a1-comprar">Ir a pagar</a>
+</aside>
+
+<!-- BANNER DESLIZANTE -->
+<section class="a1-banner">
+  <div class="a1-slide activo">
+    <img src="img/alumno1/banner1.svg" alt="Semana de la tecnología">
+    <div class="a1-texto">
+      <p class="a1-mini">SEMANA TECNO</p>
+      <h1>Hasta 40% dcto.<br>en laptops y celulares</h1>
+      <a href="#tecnologia" class="btn btn-blanco">Ver ofertas</a>
+    </div>
+  </div>
+  <div class="a1-slide">
+    <img src="img/alumno1/banner2.svg" alt="Electrohogar">
+    <div class="a1-texto">
+      <p class="a1-mini">RENUEVA TU HOGAR</p>
+      <h1>Refris y lavadoras<br>hasta 24 cuotas</h1>
+      <a href="#electro" class="btn btn-blanco">Comprar ahora</a>
+    </div>
+  </div>
+  <div class="a1-slide">
+    <img src="img/alumno1/banner3.svg" alt="Moda">
+    <div class="a1-texto">
+      <p class="a1-mini">NUEVA TEMPORADA</p>
+      <h1>Moda de verano<br>desde S/ 29.90</h1>
+      <a href="#moda" class="btn btn-blanco">Descubrir</a>
+    </div>
+  </div>
+  <button class="a1-flecha a1-prev" aria-label="Anterior">‹</button>
+  <button class="a1-flecha a1-next" aria-label="Siguiente">›</button>
+  <div class="a1-puntos"></div>
+</section>
