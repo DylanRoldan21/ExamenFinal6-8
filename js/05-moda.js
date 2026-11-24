@@ -1,10 +1,12 @@
 // ALUMNO 5 - Filtros, talla obligatoria y carro
 (() => {
   const seccion = document.getElementById('moda');
+  if (!seccion) return;
+  
   const filtros = seccion.querySelectorAll('.filtro');
   const productos = seccion.querySelectorAll('.producto');
 
-  // ---------- Filtrar por categoría ----------
+  // ---------- 1. Filtrar por categoría ----------
   filtros.forEach(boton => {
     boton.addEventListener('click', () => {
       filtros.forEach(b => b.classList.remove('activo'));
@@ -16,7 +18,7 @@
     });
   });
 
-  // ---------- Elegir talla ----------
+  // ---------- 2. Elegir talla ----------
   seccion.querySelectorAll('.a5-tallas').forEach(grupo => {
     const botones = grupo.querySelectorAll('button');
     botones.forEach(b => b.addEventListener('click', () => {
@@ -25,13 +27,53 @@
     }));
   });
 
-  // ---------- Agregar al carro (obliga a elegir talla) ----------
+  // ---------- 3. Agregar al carro (obliga a elegir talla) ----------
   seccion.querySelectorAll('.btn-agregar').forEach(boton => {
     boton.addEventListener('click', () => {
       const p = boton.closest('.producto');
       const talla = p.querySelector('.a5-tallas button.activo');
-      if (!talla) { mostrarToast('⚠️ Primero elige una talla'); return; }
+      
+      if (!talla) { 
+          mostrarToast('⚠️ Primero elige una talla'); 
+          return; 
+      }
+      
+      // Envía el nombre con la talla al carrito
       agregarAlCarrito(p.dataset.nombre + ' (Talla ' + talla.textContent + ')', p.dataset.precio);
     });
   });
+
+  // ---------- 4. RETO EXTRA: Guía de Tallas ----------
+  const btnGuia = document.getElementById('btn-guia-tallas');
+  if (btnGuia) {
+    btnGuia.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Aquí usamos SweetAlert si ya lo tienes importado en el proyecto
+      // Si no, usamos un alert normal (pero te recomiendo SweetAlert)
+      if (typeof Swal !== 'undefined') {
+          Swal.fire({
+            title: 'Guía de Tallas',
+            html: `
+              <table style="width:100%; text-align:center; border-collapse: collapse; margin-top: 10px;">
+                <tr style="background:#f4f4f4; border-bottom: 2px solid #ddd;">
+                  <th style="padding:8px;">Talla</th>
+                  <th style="padding:8px;">Pecho (cm)</th>
+                  <th style="padding:8px;">Cintura (cm)</th>
+                </tr>
+                <tr><td>S</td><td>86 - 91</td><td>71 - 76</td></tr>
+                <tr style="background:#fafafa;"><td>M</td><td>96 - 101</td><td>81 - 86</td></tr>
+                <tr><td>L</td><td>106 - 111</td><td>91 - 96</td></tr>
+                <tr style="background:#fafafa;"><td>XL</td><td>116 - 121</td><td>101 - 106</td></tr>
+              </table>
+              <p style="font-size:0.8rem; margin-top:15px; color:#666;">* Medidas referenciales en centímetros.</p>
+            `,
+            confirmButtonText: 'Entendido',
+            confirmButtonColor: '#e91e63'
+          });
+      } else {
+          alert("Tabla de tallas:\nS: Pecho 86-91 cm\nM: Pecho 96-101 cm\nL: Pecho 106-111 cm\nXL: Pecho 116-121 cm");
+      }
+    });
+  }
 })();

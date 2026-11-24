@@ -1,6 +1,123 @@
 /* ALUMNO 5 - Moda. Usa SOLO clases .a5- */
-.a5-seccion { background: var(--gris-claro); }
-.a5-tallas { display: flex; gap: 6px; }
-.a5-tallas button { min-width: 36px; height: 32px; border: 1px solid var(--borde); background: #fff; border-radius: 6px; cursor: pointer; font-size: .8rem; transition: .2s; }
-.a5-tallas button:hover { border-color: var(--oscuro); }
-.a5-tallas button.activo { background: var(--oscuro); color: #fff; border-color: var(--oscuro); }
+
+/* 1. Fondo llamativo (Azul Cian Eléctrico) */
+.a5-seccion { 
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%) !important; 
+    padding: 60px 0;
+    border-top: 8px solid #e91e63; /* Borde superior fucsia para resaltar */
+    border-bottom: 8px solid #e91e63;
+    margin: 40px 0;
+}
+
+/* 2. Título y subtítulo de la sección */
+.a5-seccion .depto-titulo {
+    color: #006064 !important; /* Azul oscuro para contrastar */
+}
+.a5-seccion .depto-subtitulo {
+    color: #00838f !important;
+}
+
+/* 3. Pintar los filtros de color */
+.a5-seccion .filtro {
+    border: 2px solid #00bcd4 !important; /* Borde cian */
+    color: #00838f !important;
+    background: #ffffff !important;
+    border-radius: 25px !important;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.a5-seccion .filtro:hover,
+.a5-seccion .filtro.activo {
+    background: #00bcd4 !important; /* El filtro activo se vuelve cian brillante */
+    color: #ffffff !important;
+    border-color: #00bcd4 !important;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+}
+
+/* 4. Estilo para la Guía de Tallas (Boton fucsia) */
+.a5-guia-tallas {
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #e91e63 !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+}
+.a5-guia-tallas:hover {
+    background: #c2185b !important;
+    transform: scale(1.05);
+}
+
+/* 5. Tarjetas de producto (Blancas para que resalten en el fondo azul) */
+.a5-seccion .producto {
+    background: #ffffff !important;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+    overflow: hidden;
+}
+.a5-seccion .producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 188, 212, 0.3);
+}
+
+/* 6. Contenedor de las tallas */
+.a5-tallas { 
+    display: flex; 
+    gap: 8px; 
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+/* 7. Botones de talla */
+.a5-tallas button { 
+    min-width: 38px; 
+    height: 34px; 
+    border: 1px solid #ccc; 
+    background: #f8f9fa; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: .85rem; 
+    font-weight: 600;
+    color: #444;
+    transition: all 0.2s ease; 
+}
+
+.a5-tallas button:hover { 
+    border-color: #e91e63; 
+    color: #e91e63;
+}
+
+/* 8. Botón de Talla Activo (Fucsia) */
+.a5-tallas button.activo { 
+    background: #e91e63 !important;
+    color: #fff !important; 
+    border-color: #e91e63 !important; 
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4);
+}
+
+/* 9. Botón de Agregar al Carro */
+.a5-seccion .btn-agregar {
+    background: #006064 !important; /* Azul oscuro profundo */
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+.a5-seccion .btn-agregar:hover {
+    background: #00bcd4 !important; /* Cambia a cian brillante al pasar el mouse */
+}
