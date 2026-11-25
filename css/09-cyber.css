@@ -1,4 +1,3 @@
-/* ALUMNO 9 - Cyber ofertas. Usa SOLO clases .a9- */
 .a9-seccion { background: linear-gradient(135deg, #1a0008, #7a0019 60%, #e4002b); color: #fff; }
 .a9-seccion .producto { color: var(--oscuro); border: 0; }
 .a9-cabecera { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -15,3 +14,6 @@
 .a9-stock-texto { font-size: .8rem; font-weight: 700; color: var(--rojo); }
 .a9-seccion .btn-agregar { background: var(--rojo); }
 .a9-seccion .btn-agregar:hover { background: #a8001f; }
+.a9-descuento { background: var(--rojo); color: #fff; font-weight: 900; padding: 4px 9px; border-radius: 4px; font-size: .72rem; }
+.a9-antes { color: var(--gris); text-decoration: line-through; font-size: .85rem; }
+.a9-ahorro { font-size: .8rem; font-weight: 700; color: #1f7a37; background: #e8f6ec; border-radius: 6px; padding: 4px 8px; display: inline-block; margin: 4px 0; }
