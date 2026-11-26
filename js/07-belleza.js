@@ -19,14 +19,25 @@
   // ---------- Favoritos ----------
   let favoritos = 0;
   const contador = document.getElementById('a7-favoritos');
+  
   seccion.querySelectorAll('.a7-fav').forEach(corazon => {
     corazon.addEventListener('click', () => {
       corazon.classList.toggle('activo');
       const marcado = corazon.classList.contains('activo');
-      corazon.textContent = marcado ? '♥' : '♡';
+      
+      // Cambiar el icono (corazón vacío vs lleno)
+      const icono = corazon.querySelector('.material-icons-round');
+      icono.textContent = marcado ? 'favorite' : 'favorite_border';
+      
       favoritos += marcado ? 1 : -1;
       contador.textContent = favoritos;
-      if (marcado) mostrarToast('❤️ Agregado a favoritos');
+      
+      // RETO EXTRA: Mensaje al agregar o quitar de favoritos
+      if (marcado) {
+        mostrarToast('❤️ Agregado a favoritos');
+      } else {
+        mostrarToast('💔 Quitado de favoritos');
+      }
     });
   });
 
