@@ -333,3 +333,41 @@
 @media (prefers-reduced-motion: reduce) {
   .a3-seccion { animation: none; }
 }
+
+/* ===== Ventana de detalles ===== */
+.a3-modal-caja {
+  position: relative;
+  background: linear-gradient(160deg, #111a2e, #070b16);
+  color: #e8f1ff;
+  border: 1px solid #00e5ff;
+  border-radius: 18px;
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 26px;
+  box-shadow: 0 0 40px rgba(0, 229, 255, .3);
+}
+.a3-modal-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 229, 255, .3);
+  border-radius: 50%;
+  background: #0e1526;
+  color: #00e5ff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.a3-modal-contenido { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+.a3-modal-foto { background: #fff; border-radius: 14px; overflow: hidden; }
+.a3-modal-foto img { width: 100%; display: block; }
+.a3-modal-precio { font-size: 1.7rem; font-weight: 800; color: #fff; margin: 8px 0; }
+.a3-modal-desc { color: #8fa3c4; font-size: .9rem; margin: 10px 0 14px; }
+.a3-modal-agregar { width: 100%; }
+
+@media (max-width: 600px) {
+  .a3-modal-contenido { grid-template-columns: 1fr; }
+}
