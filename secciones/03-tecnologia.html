@@ -27,6 +27,19 @@
       Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
     -->
     <!-- data-estrellas = calificación de 1 a 5. Las cuotas las calcula el JavaScript solo. -->
+        <div class="a3-herramientas">
+      <input type="search" id="a3-buscar" class="a3-buscar" placeholder="🔍 Buscar producto o marca..." aria-label="Buscar producto">
+      <select id="a3-orden" class="a3-orden" aria-label="Ordenar productos">
+        <option value="original">Ordenar por</option>
+        <option value="favoritos">♥ Favoritos primero</option>
+        <option value="precio-asc">Precio: menor a mayor</option>
+        <option value="precio-desc">Precio: mayor a menor</option>
+        <option value="rating">Mejor calificados (estrellas)</option>
+        <option value="nombre">Nombre A-Z</option>
+      </select>
+    </div>
+    <p class="a3-contador" id="a3-contador" aria-live="polite"></p>
+    
     <div class="grid-productos" id="a3-grid">
       <article class="producto" data-categoria="televisores" data-nombre="Smart TV 55&quot; 4K UHD Crystal" data-precio="1899.00">
         <div class="producto-foto">
@@ -199,6 +212,7 @@
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
+        <p class="a3-vacio" id="a3-vacio" hidden>😕 No encontramos productos con esa búsqueda.</p>
     </div>
   </div>
 </section>
