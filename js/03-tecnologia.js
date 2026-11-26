@@ -58,13 +58,13 @@
   }
 
   // ---------- Ordenar ----------
-    function ordenar() {
+  function ordenar() {
     const lista = ordenOriginal.slice();
     const precio = p => Number(p.dataset.precio);
     const estrellas = p => Number(p.querySelector('.a3-rating').dataset.estrellas);
     const esFav = p => favoritos.has(p.dataset.nombre);
     switch (orden.value) {
-      case 'favoritos':   lista.sort((a, b) => esFav(b) - esFav(a)); break; // el resto mantiene su orden original
+      case 'favoritos':   lista.sort((a, b) => esFav(b) - esFav(a)); break;
       case 'precio-asc':  lista.sort((a, b) => precio(a) - precio(b)); break;
       case 'precio-desc': lista.sort((a, b) => precio(b) - precio(a)); break;
       case 'rating':      lista.sort((a, b) => estrellas(b) - estrellas(a) || Number(b.dataset.opiniones) - Number(a.dataset.opiniones)); break;
@@ -156,13 +156,13 @@
       corazon.setAttribute('aria-label', activo ? 'Quitar de favoritos' : 'Agregar a favoritos');
     };
     pintarCorazon();
-        corazon.addEventListener('click', () => {
+    corazon.addEventListener('click', () => {
       const nombre = p.dataset.nombre;
       favoritos.has(nombre) ? favoritos.delete(nombre) : favoritos.add(nombre);
       guardarFav();
       pintarCorazon();
       actualizarBtnFav();
-      if (orden.value === 'favoritos') ordenar(); // <-- línea nueva
+      if (orden.value === 'favoritos') ordenar();
       actualizar();
     });
     foto.appendChild(corazon);
@@ -179,7 +179,10 @@
   // ---------- Ventana de detalles ----------
   const modal = document.createElement('div');
   modal.className = 'a3-modal';
-  modal.hidden = true;
+  // Estilos esenciales en línea: así funciona aunque falte algo en el CSS
+  modal.style.cssText =
+    'position:fixed;inset:0;display:none;align-items:center;justify-content:center;' +
+    'padding:16px;background:rgba(3,6,14,.8);z-index:99999;';
   modal.innerHTML =
     '<div class="a3-modal-caja" role="dialog" aria-modal="true" aria-labelledby="a3-modal-titulo">' +
       '<button type="button" class="a3-modal-cerrar" aria-label="Cerrar">✕</button>' +
@@ -211,18 +214,18 @@
       feedbackAgregado(e.currentTarget);
     });
 
-    modal.hidden = false;
+    modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    modal.querySelector('.a3-modal-cerrar').focus();
+    modal.querySelector('.a3-modal-cerrar').focus({ preventScroll: true });
   }
 
   function cerrarDetalles() {
-    modal.hidden = true;
+    modal.style.display = 'none';
     document.body.style.overflow = '';
   }
   modal.querySelector('.a3-modal-cerrar').addEventListener('click', cerrarDetalles);
   modal.addEventListener('click', e => { if (e.target === modal) cerrarDetalles(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) cerrarDetalles(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.style.display === 'flex') cerrarDetalles(); });
 
   // ---------- Agregar al carro (tarjetas) ----------
   grid.querySelectorAll('.btn-agregar').forEach(boton => {
