@@ -1,4 +1,4 @@
-// ALUMNO 5 - Filtros, talla obligatoria y carro
+// ALUMNO 5 - Filtros, talla obligatoria, guía y favoritos
 (() => {
   const seccion = document.getElementById('moda');
   if (!seccion) return;
@@ -34,11 +34,21 @@
       const talla = p.querySelector('.a5-tallas button.activo');
       
       if (!talla) { 
-          mostrarToast('⚠️ Primero elige una talla'); 
+          // Si tienes SweetAlert (Swal), puedes usar esto:
+          if(typeof Swal !== 'undefined') {
+            Swal.fire({
+              icon: 'warning',
+              title: '¡Falta la talla!',
+              text: 'Por favor, selecciona una talla antes de agregar el producto.',
+              confirmButtonColor: '#6c5ce7'
+            });
+          } else {
+            alert('⚠️ Primero elige una talla'); 
+          }
           return; 
       }
       
-      // Envía el nombre con la talla al carrito
+      // Llama a la función global del carrito
       agregarAlCarrito(p.dataset.nombre + ' (Talla ' + talla.textContent + ')', p.dataset.precio);
     });
   });
@@ -49,17 +59,15 @@
     btnGuia.addEventListener('click', (e) => {
       e.preventDefault();
       
-      // Aquí usamos SweetAlert si ya lo tienes importado en el proyecto
-      // Si no, usamos un alert normal (pero te recomiendo SweetAlert)
       if (typeof Swal !== 'undefined') {
           Swal.fire({
             title: 'Guía de Tallas',
             html: `
               <table style="width:100%; text-align:center; border-collapse: collapse; margin-top: 10px;">
                 <tr style="background:#f4f4f4; border-bottom: 2px solid #ddd;">
-                  <th style="padding:8px;">Talla</th>
-                  <th style="padding:8px;">Pecho (cm)</th>
-                  <th style="padding:8px;">Cintura (cm)</th>
+                  <th style="padding:10px;">Talla</th>
+                  <th style="padding:10px;">Pecho (cm)</th>
+                  <th style="padding:10px;">Cintura (cm)</th>
                 </tr>
                 <tr><td>S</td><td>86 - 91</td><td>71 - 76</td></tr>
                 <tr style="background:#fafafa;"><td>M</td><td>96 - 101</td><td>81 - 86</td></tr>
@@ -69,11 +77,30 @@
               <p style="font-size:0.8rem; margin-top:15px; color:#666;">* Medidas referenciales en centímetros.</p>
             `,
             confirmButtonText: 'Entendido',
-            confirmButtonColor: '#e91e63'
+            confirmButtonColor: '#fd79a8'
           });
       } else {
           alert("Tabla de tallas:\nS: Pecho 86-91 cm\nM: Pecho 96-101 cm\nL: Pecho 106-111 cm\nXL: Pecho 116-121 cm");
       }
     });
   }
+
+  // ---------- 5. Botón de Favoritos ----------
+  seccion.querySelectorAll('.btn-favorito').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); 
+      btn.classList.toggle('active');
+      if (btn.classList.contains('active')) {
+        btn.textContent = '❤️'; 
+        // Opcional: Mostrar un mini mensaje
+        if(typeof Swal !== 'undefined') {
+          const Toast = Swal.mixin({ toast: true, position: 'top-end', showConfirmButton: false, timer: 1500 });
+          Toast.fire({ icon: 'success', title: 'Añadido a favoritos' });
+        }
+      } else {
+        btn.textContent = '🤍'; 
+      }
+    });
+  });
+
 })();
