@@ -1,13 +1,18 @@
 /* ALUMNO 1 - Header + Buscador + Carrito + Banner. Usa SOLO clases .a1- */
-.a1-top { background: var(--oscuro); color: #fff; font-size: .78rem; }
+
+/* ===== RETO 7: barra superior con color propio ===== */
+.a1-top { background: #0d1b2a; color: #fff; font-size: .78rem; }
 .a1-top-fila { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; gap: 10px; flex-wrap: wrap; }
 .a1-top nav { display: flex; gap: 18px; }
 .a1-top a:hover { text-decoration: underline; }
 
 .a1-header { position: sticky; top: 0; z-index: 60; background: var(--blanco); box-shadow: 0 2px 10px rgba(0, 0, 0, .06); }
 .a1-barra { display: flex; align-items: center; gap: 18px; height: 72px; }
-.a1-logo { font-size: 1.7rem; font-weight: 900; color: var(--verde); letter-spacing: -.5px; white-space: nowrap; }
-.a1-logo span { color: var(--oscuro); }
+
+/* ===== RETO 7: logo con color propio ===== */
+.a1-logo { font-size: 1.7rem; font-weight: 900; color: #e63946; letter-spacing: -.5px; white-space: nowrap; }
+.a1-logo span { color: #1d3557; }
+
 .a1-menu-btn { background: none; border: 0; font-size: 1rem; font-weight: 700; cursor: pointer; display: none; }
 
 .a1-buscador { flex: 1; display: flex; border: 2px solid var(--borde); border-radius: 999px; overflow: hidden; transition: .2s; }
@@ -25,8 +30,17 @@
 .a1-departamentos a:hover { color: var(--verde); }
 .a1-departamentos .a1-cyber { color: var(--rojo); }
 
-/* Producto encontrado por el buscador */
-.a1-encontrado { outline: 3px solid var(--verde); box-shadow: 0 0 0 6px rgba(46, 158, 74, .2); }
+/* Producto encontrado por el buscador (borde verde con animación) */
+.a1-encontrado {
+  outline: 3px solid #2e9e4a;
+  box-shadow: 0 0 0 6px rgba(46, 158, 74, .25);
+  border-radius: 8px;
+  animation: a1-pulso 1s ease-in-out 2;
+}
+@keyframes a1-pulso {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(46, 158, 74, .25); }
+  50%      { box-shadow: 0 0 0 12px rgba(46, 158, 74, .05); }
+}
 
 /* Panel del carro */
 .a1-panel { position: fixed; top: 0; right: 0; width: min(380px, 90vw); height: 100vh; background: #fff; box-shadow: -10px 0 30px rgba(0, 0, 0, .15); transform: translateX(105%); transition: .35s; z-index: 100; display: flex; flex-direction: column; padding: 24px; }
@@ -39,6 +53,21 @@
 .a1-lista li.a1-vacio { color: var(--gris); justify-content: center; border: 0; }
 .a1-total { font-size: 1.15rem; margin-bottom: 14px; }
 .a1-comprar { text-align: center; }
+
+/* RETO EXTRA: botón Vaciar carro */
+.a1-vaciar {
+  margin-top: 10px;
+  background: none;
+  border: 2px solid var(--rojo);
+  color: var(--rojo);
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+  font-size: .9rem;
+}
+.a1-vaciar:hover { background: var(--rojo); color: #fff; }
 
 /* Banner */
 .a1-banner { position: relative; height: clamp(240px, 32vw, 420px); overflow: hidden; background: var(--oscuro); }
@@ -53,8 +82,8 @@
 .a1-prev { left: 16px; }
 .a1-next { right: 16px; }
 .a1-puntos { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 8px; }
-.a1-puntos button { width: 11px; height: 11px; border-radius: 50%; border: 2px solid #fff; background: transparent; cursor: pointer; }
-.a1-puntos button.activo { background: #fff; }
+.a1-puntos button { width: 11px; height: 11px; border-radius: 50%; border: 2px solid #fff; background: transparent; cursor: pointer; transition: .2s; }
+.a1-puntos button.activo { background: #fff; transform: scale(1.2); }
 
 @media (max-width: 900px) {
   .a1-usuario span, .a1-top nav { display: none; }

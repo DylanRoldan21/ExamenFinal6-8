@@ -1,18 +1,373 @@
 /* ALUMNO 3 - Tecnología. Usa SOLO clases .a3- */
-.a3-seccion { background: var(--gris-claro); }
-.a3-rating { color: var(--amarillo); font-size: .9rem; letter-spacing: 1px; }
-.a3-rating span { color: var(--gris); font-size: .78rem; letter-spacing: 0; }
 
-/* Recuadro de cuotas con estilo propio */
-.a3-cuotas {
-  font-size: .8rem;
+/* ===== Paleta tech (variables propias de esta sección) ===== */
+.a3-seccion,
+.a3-modal {
+  --a3-bg: #070b16;
+  --a3-panel: #0e1526;
+  --a3-card: #111a2e;
+  --a3-borde: rgba(0, 229, 255, .18);
+  --a3-cian: #00e5ff;
+  --a3-azul: #2979ff;
+  --a3-violeta: #7c4dff;
+  --a3-texto: #e8f1ff;
+  --a3-suave: #8fa3c4;
+  --a3-mono: "Consolas", "Courier New", monospace;
+}
+
+/* ===== Fondo de la sección: cuadrícula + luces ===== */
+.a3-seccion {
+  position: relative;
+  color: var(--a3-texto);
+  background-color: #060a14;
+  background-image:
+    /* cuadrícula tenue encima de todo */
+    linear-gradient(rgba(0, 229, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, .04) 1px, transparent 1px),
+    /* luces grandes y suaves (difuminado) */
+    radial-gradient(ellipse 60% 45% at 8% 6%,   rgba(41, 121, 255, .38), transparent 70%),
+    radial-gradient(ellipse 55% 40% at 95% 20%, rgba(124, 77, 255, .32), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 55%, rgba(0, 229, 255, .14),  transparent 72%),
+    radial-gradient(ellipse 60% 45% at 5% 90%,  rgba(0, 229, 255, .24),  transparent 70%),
+    radial-gradient(ellipse 55% 45% at 95% 95%, rgba(124, 77, 255, .30), transparent 70%),
+    /* base que cambia de tono de arriba a abajo */
+    linear-gradient(180deg, #0b1330 0%, #070c1c 45%, #0a0f24 75%, #0d0a26 100%);
+    background-size: 40px 40px, 40px 40px, 140% 140%, 140% 140%, 140% 140%, 140% 140%, 140% 140%, auto;
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+/* Línea de neón arriba y abajo */
+.a3-seccion::before,
+.a3-seccion::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--a3-cian), var(--a3-violeta), transparent);
+  box-shadow: 0 0 14px var(--a3-cian);
+}
+.a3-seccion::before { top: 0; }
+.a3-seccion::after { bottom: 0; }
+
+/* ===== Cabecera ===== */
+.a3-seccion .depto-titulo {
+  color: var(--a3-texto);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: var(--a3-mono);
+  background: linear-gradient(90deg, var(--a3-cian), var(--a3-azul), var(--a3-violeta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, .35));
+}
+.a3-seccion .depto-subtitulo { color: var(--a3-suave); font-family: var(--a3-mono); font-size: .9rem; }
+.a3-seccion .depto-subtitulo::before { content: "> "; color: var(--a3-cian); }
+.a3-seccion .ver-todo {
+  color: var(--a3-cian);
+  border: 1px solid var(--a3-borde);
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+.a3-seccion .ver-todo:hover { background: var(--a3-cian); color: var(--a3-bg); box-shadow: 0 0 16px var(--a3-cian); }
+
+/* ===== Botones de filtro ===== */
+.a3-seccion .filtro {
+  background: var(--a3-panel);
+  color: var(--a3-suave);
+  border: 1px solid var(--a3-borde);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: var(--a3-mono);
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.a3-seccion .filtro:hover { color: var(--a3-cian); border-color: var(--a3-cian); box-shadow: 0 0 12px rgba(0, 229, 255, .3); }
+.a3-seccion .filtro.activo {
+  background: linear-gradient(135deg, var(--a3-cian), var(--a3-azul));
+  color: #04101f;
   font-weight: 700;
-  color: #0b3d91;
-  background: #e6f0ff;
-  border-left: 4px solid #0b3d91;
-  padding: 6px 10px;
+  border-color: transparent;
+  box-shadow: 0 0 18px rgba(0, 229, 255, .5);
+}
+
+/* ===== Barra de búsqueda y orden ===== */
+.a3-herramientas { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 6px; }
+.a3-buscar, .a3-orden {
+  padding: 11px 14px;
+  background: var(--a3-panel);
+  color: var(--a3-texto);
+  border: 1px solid var(--a3-borde);
+  border-radius: 10px;
+  font-size: .95rem;
+  font-family: var(--a3-mono);
+}
+.a3-buscar { flex: 1 1 240px; }
+.a3-buscar::placeholder { color: var(--a3-suave); }
+.a3-orden { flex: 0 1 230px; cursor: pointer; }
+.a3-orden option { background: var(--a3-panel); color: var(--a3-texto); }
+.a3-buscar:focus, .a3-orden:focus {
+  outline: none;
+  border-color: var(--a3-cian);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, .2), 0 0 16px rgba(0, 229, 255, .3);
+}
+.a3-contador { font-family: var(--a3-mono); font-size: .8rem; color: var(--a3-cian); margin: 6px 0 14px; }
+.a3-vacio { text-align: center; padding: 32px 0; font-size: 1.1rem; color: var(--a3-suave); font-family: var(--a3-mono); }
+.a3-vacio[hidden] { display: none; }
+
+/* ===== Tarjetas (altura igual y botones al fondo) ===== */
+#a3-grid { align-items: stretch; }
+#a3-grid .producto {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(160deg, rgba(20, 32, 60, .72), rgba(10, 16, 34, .78));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--a3-borde);
+  border-radius: 16px;
+  padding: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+#a3-grid .producto:hover {
+  transform: translateY(-6px);
+  border-color: var(--a3-cian);
+  box-shadow: 0 0 0 1px var(--a3-cian), 0 0 26px rgba(0, 229, 255, .35), 0 14px 30px rgba(0, 0, 0, .5);
+}
+#a3-grid .producto-info { display: flex; flex-direction: column; flex: 1; padding: 12px 4px 4px; }
+
+/* Foto con fondo blanco (como las tiendas) dentro de un marco tech */
+#a3-grid .producto-foto {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, .25);
+}
+#a3-grid .producto-foto img { transition: transform .35s ease; }
+#a3-grid .producto:hover .producto-foto img { transform: scale(1.07); }
+
+/* Textos */
+#a3-grid .producto-marca {
+  color: var(--a3-cian);
+  font-family: var(--a3-mono);
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+#a3-grid .producto-nombre {
+  color: var(--a3-texto);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.6em;
+}
+#a3-grid .producto-precio {
+  color: #fff;
+  font-family: var(--a3-mono);
+  font-weight: 800;
+  font-size: 1.35rem;
+  text-shadow: 0 0 12px rgba(0, 229, 255, .45);
+}
+.a3-precio-antes {
+  display: inline-block;
+  font-family: var(--a3-mono);
+  font-size: .85rem;
+  color: var(--a3-suave);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+/* Etiqueta roja (-25%, NUEVO) en estilo neón */
+#a3-grid .producto-etiqueta {
+  background: linear-gradient(135deg, #ff1744, #ff6d00);
+  color: #fff;
+  font-family: var(--a3-mono);
+  font-weight: 700;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(255, 23, 68, .6);
+}
+
+/* ===== Estrellas ===== */
+.a3-rating { color: #ffd54f; font-size: .9rem; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255, 213, 79, .5); }
+.a3-rating span { color: var(--a3-suave); font-size: .78rem; letter-spacing: 0; text-shadow: none; font-family: var(--a3-mono); }
+
+/* ===== Cuotas ===== */
+.a3-cuotas {
+  font-family: var(--a3-mono);
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--a3-cian);
+  background: rgba(0, 229, 255, .08);
+  border: 1px solid rgba(0, 229, 255, .3);
+  border-left: 4px solid var(--a3-cian);
+  padding: 7px 10px;
   border-radius: 0 8px 8px 0;
   margin: 6px 0;
 }
 
-.a3-envio { font-size: .8rem; font-weight: 700; color: var(--verde-oscuro); margin: 4px 0; }
+/* ===== Envío gratis ===== */
+.a3-envio { font-family: var(--a3-mono); font-size: .8rem; font-weight: 700; color: #69f0ae; margin: 4px 0; text-shadow: 0 0 8px rgba(105, 240, 174, .4); }
+
+/* ===== Corazón de favoritos ===== */
+.a3-fav {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(7, 11, 22, .85);
+  color: var(--a3-suave);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px var(--a3-borde);
+  transition: transform .15s ease, color .15s ease, box-shadow .15s ease;
+  z-index: 2;
+}
+.a3-fav:hover { transform: scale(1.15); color: #ff4081; box-shadow: 0 0 14px rgba(255, 64, 129, .7); }
+.a3-fav-activo { color: #ff4081; box-shadow: 0 0 14px rgba(255, 64, 129, .7); }
+
+/* ===== Insignia "Más vendido" ===== */
+.a3-mas-vendido {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #ff6d00, #ff1744);
+  color: #fff;
+  font-family: var(--a3-mono);
+  font-size: .7rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(255, 109, 0, .7);
+  z-index: 2;
+}
+
+/* ===== Botones: Ver detalles + Agregar al carro ===== */
+.a3-btn-detalles {
+  width: 100%;
+  margin: auto 0 8px;
+  padding: 9px 10px;
+  background: transparent;
+  color: var(--a3-cian);
+  border: 1px solid var(--a3-cian);
+  border-radius: 10px;
+  font-family: var(--a3-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.a3-btn-detalles:hover { background: rgba(0, 229, 255, .15); box-shadow: 0 0 16px rgba(0, 229, 255, .45); }
+
+#a3-grid .btn-agregar,
+.a3-modal .btn-agregar {
+  width: 100%;
+  margin-top: 0;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, var(--a3-cian), var(--a3-azul));
+  color: #04101f;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .82rem;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+#a3-grid .btn-agregar:hover,
+.a3-modal .btn-agregar:hover { transform: translateY(-2px); box-shadow: 0 0 22px rgba(0, 229, 255, .65); filter: brightness(1.1); }
+
+/* Botón tras agregar */
+#a3-grid .btn-agregar.a3-agregado,
+.a3-modal .btn-agregar.a3-agregado {
+  background: linear-gradient(135deg, #00e676, #00bfa5);
+  color: #03150d;
+  box-shadow: 0 0 20px rgba(0, 230, 118, .6);
+}
+
+/* ===== Fondo animado: luces de colores (intensas) ===== */
+.a3-seccion {
+  position: relative;
+  color: var(--a3-texto);
+  background-color: #060a14;
+  background-image:
+    /* cuadrícula tenue */
+    linear-gradient(rgba(0, 229, 255, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, .05) 1px, transparent 1px),
+    /* luces grandes y suaves, más intensas */
+    radial-gradient(ellipse 65% 50% at 8% 6%,   rgba(41, 121, 255, .75), transparent 72%),
+    radial-gradient(ellipse 60% 45% at 95% 20%, rgba(124, 77, 255, .65), transparent 72%),
+    radial-gradient(ellipse 55% 45% at 50% 55%, rgba(0, 229, 255, .32),  transparent 74%),
+    radial-gradient(ellipse 65% 50% at 5% 90%,  rgba(0, 229, 255, .55),  transparent 72%),
+    radial-gradient(ellipse 60% 50% at 95% 95%, rgba(124, 77, 255, .62), transparent 72%),
+    /* base que cambia de tono */
+    linear-gradient(180deg, #0c1538 0%, #080e24 45%, #0b1130 75%, #0f0b2e 100%);
+  background-size: 40px 40px, 40px 40px, 140% 140%, 140% 140%, 140% 140%, 140% 140%, 140% 140%, auto;
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  animation: a3-luces 9s ease-in-out infinite;
+}
+
+@keyframes a3-luces {
+  0%   { background-position: 0 0, 0 0, 0% 0%,   100% 0%, 50% 50%, 0% 100%,  100% 100%, 0 0; }
+  33%  { background-position: 0 0, 0 0, 70% 40%, 20% 70%, 90% 10%, 60% 30%,  30% 60%,   0 0; }
+  66%  { background-position: 0 0, 0 0, 30% 90%, 80% 30%, 10% 80%, 100% 70%, 70% 0%,    0 0; }
+  100% { background-position: 0 0, 0 0, 0% 0%,   100% 0%, 50% 50%, 0% 100%,  100% 100%, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .a3-seccion { animation: none; }
+}
+
+/* ===== Ventana de detalles ===== */
+.a3-modal-caja {
+  position: relative;
+  background: linear-gradient(160deg, #111a2e, #070b16);
+  color: #e8f1ff;
+  border: 1px solid #00e5ff;
+  border-radius: 18px;
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 26px;
+  box-shadow: 0 0 40px rgba(0, 229, 255, .3);
+}
+.a3-modal-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0, 229, 255, .3);
+  border-radius: 50%;
+  background: #0e1526;
+  color: #00e5ff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.a3-modal-contenido { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+.a3-modal-foto { background: #fff; border-radius: 14px; overflow: hidden; }
+.a3-modal-foto img { width: 100%; display: block; }
+.a3-modal-precio { font-size: 1.7rem; font-weight: 800; color: #fff; margin: 8px 0; }
+.a3-modal-desc { color: #8fa3c4; font-size: .9rem; margin: 10px 0 14px; }
+.a3-modal-agregar { width: 100%; }
+
+@media (max-width: 600px) {
+  .a3-modal-contenido { grid-template-columns: 1fr; }
+}
