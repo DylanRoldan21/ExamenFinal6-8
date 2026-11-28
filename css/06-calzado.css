@@ -1,4 +1,194 @@
-/* ALUMNO 6 - Calzado. Usa SOLO clases .a6- */
-.a6-seccion { background: var(--blanco); }
-.a6-talla { padding: 8px 10px; border: 1px solid var(--borde); border-radius: 8px; background: #fff; cursor: pointer; font-size: .85rem; }
-.a6-talla.a6-error { border-color: var(--rojo); box-shadow: 0 0 0 3px rgba(228, 0, 43, .15); }
+/* ============================================================
+   ALUMNO 6 · CALZADO · FONDO MUY URBANO + LOGO LED + NEÓN ROSA
+   ============================================================ */
+
+/* ---------- Fondo urbano tipo calle/graffiti ---------- */
+.a6-seccion {
+  position: relative;
+  background:
+    /* luces neón urbanas */
+    radial-gradient(circle at 15% 15%, rgba(255, 46, 136, .35), transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(0, 200, 255, .22), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(255, 46, 136, .18), transparent 45%),
+    /* asfalto oscuro */
+    linear-gradient(135deg, #0a0a0f 0%, #14141c 35%, #1c1c26 60%, #0a0a0f 100%);
+  color: #eaeaf0;
+  overflow: hidden;
+}
+
+/* Capa 1: textura de asfalto + líneas de calle */
+.a6-seccion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    /* ruido tipo asfalto */
+    repeating-linear-gradient(0deg,
+      rgba(255, 255, 255, .03) 0 1px,
+      transparent 1px 3px),
+    /* líneas diagonales tipo graffiti */
+    repeating-linear-gradient(45deg,
+      rgba(255, 46, 136, .06) 0 2px,
+      transparent 2px 18px),
+    /* líneas cruzadas azul neón */
+    repeating-linear-gradient(-45deg,
+      rgba(0, 200, 255, .05) 0 1px,
+      transparent 1px 26px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: .9;
+}
+
+/* Capa 2: manchas de spray tipo graffiti */
+.a6-seccion::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 80%, rgba(255, 46, 136, .18) 0 8%, transparent 12%),
+    radial-gradient(circle at 30% 30%, rgba(0, 200, 255, .12) 0 6%, transparent 10%),
+    radial-gradient(circle at 70% 70%, rgba(255, 230, 0, .10) 0 5%, transparent 9%),
+    radial-gradient(circle at 90% 40%, rgba(255, 46, 136, .15) 0 7%, transparent 11%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Contenido por encima del fondo */
+.a6-seccion .contenedor {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Logo LED "CALZADO" ---------- */
+.a6-logo-led {
+  font-family: 'Orbitron', 'Arial Black', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 8px #ff2e88,
+    0 0 16px #ff2e88,
+    0 0 28px #ff2e88,
+    0 0 46px #ff2e88,
+    0 0 70px rgba(255, 46, 136, .6);
+  animation: a6-led-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes a6-led-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 8px #ff2e88,
+      0 0 16px #ff2e88,
+      0 0 28px #ff2e88,
+      0 0 46px #ff2e88,
+      0 0 70px rgba(255, 46, 136, .6);
+    opacity: 1;
+  }
+  50% {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 6px #ff2e88,
+      0 0 12px #ff2e88,
+      0 0 20px #ff2e88,
+      0 0 32px #ff2e88,
+      0 0 50px rgba(255, 46, 136, .4);
+    opacity: .85;
+  }
+}
+
+/* Subtítulo legible sobre fondo urbano */
+.a6-seccion .depto-subtitulo {
+  color: #c9c9d6;
+  text-shadow: 0 0 6px rgba(0, 0, 0, .8);
+}
+
+/* "Volver arriba" estilo neón */
+.a6-seccion .ver-todo {
+  color: #ff9ccb;
+  border-color: #ff2e88;
+  text-shadow: 0 0 6px rgba(255, 46, 136, .8);
+}
+.a6-seccion .ver-todo:hover {
+  background: #ff2e88;
+  color: #111;
+  box-shadow: 0 0 14px rgba(255, 46, 136, .8);
+}
+
+/* ---------- Tarjetas producto estilo urbano ---------- */
+.a6-seccion .producto {
+  background: #15151c;
+  border: 1px solid #2a2a36;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, .55),
+    inset 0 0 0 1px rgba(255, 255, 255, .02);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.a6-seccion .producto:hover {
+  transform: translateY(-4px);
+  border-color: #ff2e88;
+  box-shadow:
+    0 0 0 1px #ff2e88,
+    0 10px 28px rgba(255, 46, 136, .35),
+    0 0 40px rgba(255, 46, 136, .25);
+}
+.a6-seccion .producto-marca { color: #ff9ccb; }
+.a6-seccion .producto-nombre { color: #f2f2f7; }
+.a6-seccion .producto-precio { color: #fff; }
+
+/* ---------- Etiquetas neón rosa ---------- */
+.a6-seccion .producto-etiqueta {
+  background: #ff2e88;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-shadow: 0 0 6px rgba(255, 46, 136, .9);
+  box-shadow:
+    0 0 10px rgba(255, 46, 136, .9),
+    0 0 20px rgba(255, 46, 136, .6),
+    0 0 35px rgba(255, 46, 136, .35);
+  border: 1px solid #ff7ab8;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.a6-seccion .producto-etiqueta.etiqueta-descuento {
+  background: #ff2e88;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 46, 136, 1);
+  box-shadow:
+    0 0 10px rgba(255, 46, 136, 1),
+    0 0 20px rgba(255, 46, 136, .7),
+    0 0 35px rgba(255, 46, 136, .4);
+  border-color: #ff9ccb;
+}
+
+/* ---------- Filtros estilo urbano ---------- */
+.a6-seccion .filtro {
+  background: #15151c;
+  color: #d6d6e0;
+  border: 1px solid #2a2a36;
+  transition: all .2s ease;
+}
+.a6-seccion .filtro.activo,
+.a6-seccion .filtro:hover {
+  background: #ff2e88;
+  color: #fff;
+  border-color: #ff7ab8;
+  box-shadow:
+    0 0 12px rgba(255, 46, 136, .7),
+    0 0 24px rgba(255, 46, 136, .4);
+}
+
+/* ---------- Select de talla estilo oscuro ---------- */
+.a6-seccion .a6-talla {
+  background: #101016;
+  color: #fff;
+  border: 1px solid #2a2a36;
+}
+.a6-seccion .a6-talla.a6-error {
+  border-color: #ff2e88;
+  box-shadow: 0 0 0 3px rgba(255, 46, 136, .25);
+}
