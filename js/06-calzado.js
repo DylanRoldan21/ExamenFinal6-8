@@ -1,22 +1,25 @@
-// ALUMNO 6 - Filtros y talla obligatoria (select)
+// ALUMNO 6 - Filtros (categoría + público) y talla obligatoria
 (() => {
   const seccion = document.getElementById('calzado');
   const filtros = seccion.querySelectorAll('.filtro');
   const productos = seccion.querySelectorAll('.producto');
 
-  // ---------- Filtrar por categoría ----------
   filtros.forEach(boton => {
     boton.addEventListener('click', () => {
       filtros.forEach(b => b.classList.remove('activo'));
       boton.classList.add('activo');
-      const categoria = boton.dataset.filtro;
+      const filtro = boton.dataset.filtro;
+
       productos.forEach(p => {
-        p.classList.toggle('oculto', categoria !== 'todo' && p.dataset.categoria !== categoria);
+        let mostrar = false;
+        if (filtro === 'todo') mostrar = true;
+        else if (filtro === 'ninos') mostrar = p.dataset.publico === 'nino';
+        else mostrar = p.dataset.categoria === filtro;
+        p.classList.toggle('oculto', !mostrar);
       });
     });
   });
 
-  // ---------- Agregar al carro: valida que haya talla ----------
   seccion.querySelectorAll('.btn-agregar').forEach(boton => {
     boton.addEventListener('click', () => {
       const p = boton.closest('.producto');
@@ -31,6 +34,7 @@
     });
   });
 
-  // Quita el borde rojo cuando eligen una talla
-  seccion.querySelectorAll('.a6-talla').forEach(s => s.addEventListener('change', () => s.classList.remove('a6-error')));
+  seccion.querySelectorAll('.a6-talla').forEach(s => {
+    s.addEventListener('change', () => s.classList.remove('a6-error'));
+  });
 })();

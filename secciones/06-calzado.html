@@ -1,9 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calzado · Urbano</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============ ALUMNO 6 · CALZADO · URBANO + LED + NEÓN ============ */
+
+.a6-seccion {
+  position: relative;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,46,136,.35), transparent 35%),
+    radial-gradient(circle at 85% 20%, rgba(0,200,255,.22), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(255,46,136,.18), transparent 45%),
+    linear-gradient(135deg, #0a0a0f 0%, #14141c 35%, #1c1c26 60%, #0a0a0f 100%);
+  color: #eaeaf0;
+  overflow: hidden;
+  padding: 60px 0;
+}
+.a6-seccion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(45deg, rgba(255,46,136,.06) 0 2px, transparent 2px 18px),
+    repeating-linear-gradient(-45deg, rgba(0,200,255,.05) 0 1px, transparent 1px 26px);
+  pointer-events: none;
+  z-index: 0;
+}
+.a6-seccion::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 10% 80%, rgba(255,46,136,.18) 0 8%, transparent 12%),
+    radial-gradient(circle at 30% 30%, rgba(0,200,255,.12) 0 6%, transparent 10%),
+    radial-gradient(circle at 70% 70%, rgba(255,230,0,.10) 0 5%, transparent 9%),
+    radial-gradient(circle at 90% 40%, rgba(255,46,136,.15) 0 7%, transparent 11%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+.a6-seccion .contenedor {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.depto-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.a6-logo-led {
+  margin: 0;
+  font-family: 'Orbitron', 'Arial Black', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 4px #fff, 0 0 8px #ff2e88, 0 0 16px #ff2e88,
+    0 0 28px #ff2e88, 0 0 46px #ff2e88, 0 0 70px rgba(255,46,136,.6);
+  animation: a6-led-pulse 2.2s ease-in-out infinite;
+}
+@keyframes a6-led-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 4px #fff, 0 0 8px #ff2e88, 0 0 16px #ff2e88,
+      0 0 28px #ff2e88, 0 0 46px #ff2e88, 0 0 70px rgba(255,46,136,.6);
+    opacity: 1;
+  }
+  50% {
+    text-shadow:
+      0 0 3px #fff, 0 0 6px #ff2e88, 0 0 12px #ff2e88,
+      0 0 20px #ff2e88, 0 0 32px #ff2e88, 0 0 50px rgba(255,46,136,.4);
+    opacity: .85;
+  }
+}
+.a6-seccion .depto-subtitulo {
+  color: #c9c9d6;
+  text-shadow: 0 0 6px rgba(0,0,0,.8);
+  margin: 8px 0 0;
+}
+.a6-seccion .ver-todo {
+  color: #ff9ccb;
+  text-decoration: none;
+  border: 1px solid #ff2e88;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(255,46,136,.8);
+  transition: all .2s ease;
+}
+.a6-seccion .ver-todo:hover {
+  background: #ff2e88;
+  color: #111;
+  box-shadow: 0 0 14px rgba(255,46,136,.8);
+}
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.a6-seccion .filtro {
+  background: #15151c;
+  color: #d6d6e0;
+  border: 1px solid #2a2a36;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .2s ease;
+}
+.a6-seccion .filtro.activo,
+.a6-seccion .filtro:hover {
+  background: #ff2e88;
+  color: #fff;
+  border-color: #ff7ab8;
+  box-shadow: 0 0 12px rgba(255,46,136,.7), 0 0 24px rgba(255,46,136,.4);
+}
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+.a6-seccion .producto {
+  background: #15151c;
+  border: 1px solid #2a2a36;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.02);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.a6-seccion .producto:hover {
+  transform: translateY(-4px);
+  border-color: #ff2e88;
+  box-shadow:
+    0 0 0 1px #ff2e88,
+    0 10px 28px rgba(255,46,136,.35),
+    0 0 40px rgba(255,46,136,.25);
+}
+.a6-seccion .producto.oculto { display: none; }
+
+.producto-foto {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #0f0f14;
+  overflow: hidden;
+}
+.producto-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.a6-seccion .producto-etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff2e88;
+  color: #fff;
+  font-weight: 800;
+  font-size: .72rem;
+  letter-spacing: .5px;
+  text-shadow: 0 0 6px rgba(255,46,136,.9);
+  box-shadow:
+    0 0 10px rgba(255,46,136,.9),
+    0 0 20px rgba(255,46,136,.6),
+    0 0 35px rgba(255,46,136,.35);
+  border: 1px solid #ff7ab8;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.a6-seccion .producto-etiqueta.etiqueta-descuento {
+  background: #ff2e88;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255,46,136,1);
+  box-shadow:
+    0 0 10px rgba(255,46,136,1),
+    0 0 20px rgba(255,46,136,.7),
+    0 0 35px rgba(255,46,136,.4);
+  border-color: #ff9ccb;
+}
+.producto-info {
+  padding: 14px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.a6-seccion .producto-marca {
+  color: #ff9ccb;
+  font-size: .72rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin: 0;
+}
+.a6-seccion .producto-nombre {
+  color: #f2f2f7;
+  font-size: .95rem;
+  margin: 0;
+  line-height: 1.3;
+}
+.a6-seccion .producto-precio {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 4px 0 8px;
+}
+.a6-seccion .a6-talla {
+  background: #101016;
+  color: #fff;
+  border: 1px solid #2a2a36;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: .85rem;
+  cursor: pointer;
+}
+.a6-seccion .a6-talla.a6-error {
+  border-color: #ff2e88;
+  box-shadow: 0 0 0 3px rgba(255,46,136,.25);
+}
+.a6-seccion .btn-agregar {
+  margin-top: 6px;
+  background: #ff2e88;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.a6-seccion .btn-agregar:hover {
+  background: #ff4f9e;
+  box-shadow: 0 0 14px rgba(255,46,136,.7);
+}
+</style>
+</head>
+<body>
+
 <!-- ======================= ALUMNO 6: CALZADO ======================= -->
 <section class="seccion a6-seccion" id="calzado">
   <div class="contenedor">
     <div class="depto-cabecera">
       <div>
-        <h2 class="depto-titulo">👟 Calzado</h2>
+        <h2 class="depto-titulo a6-logo-led">CALZADO</h2>
         <p class="depto-subtitulo">Zapatillas, zapatos, sandalias y botas para toda ocasión.</p>
       </div>
       <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
@@ -17,154 +268,462 @@
       <button class="filtro" data-filtro="botas">Botas</button>
     </div>
 
-    <!--
-      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
-        data-nombre    = nombre que va al carrito
-        data-precio    = precio SOLO con números y punto (ej: 1299.00) sin S/ ni comas
-        data-categoria = IGUAL al data-filtro de un botón de arriba
-      El nombre y el precio también se escriben en el texto visible (h3 y p).
-      Para agregar un producto: copia un <article> completo y pégalo antes de </div>.
-    -->
-    <!-- Las tallas están en el <select class="a6-talla">. Puedes quitar o agregar <option>. -->
     <div class="grid-productos" id="a6-grid">
-      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Urbanas Court Vision" data-precio="329.90">
+
+      <!-- ================= ZAPATILLAS ADULTO (12) ================= -->
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Urbanas Court Vision" data-precio="329.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado1.svg" alt="Zapatillas Urbanas Court Vision">
+          <img src="https://media.falabella.com/falabellaPE/80041456_1/w=1500,h=1500,fit=cover" alt="Zapatillas Urbanas Court Vision">
           <span class="producto-etiqueta">NUEVO</span>
         </div>
         <div class="producto-info">
           <p class="producto-marca">NIKE</p>
           <h3 class="producto-nombre">Zapatillas Urbanas Court Vision</h3>
-          <p class="producto-precio">S/ 329.90</p>
+          <p class="producto-precio">329.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Running Duramo" data-precio="279.90">
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Running Duramo" data-precio="279.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado2.svg" alt="Zapatillas Running Duramo">
-          <span class="producto-etiqueta">-20%</span>
+          <img src="https://http2.mlstatic.com/D_NQ_NP_962035-MPE92026861791_092025-O-zapatillas-adidas-entrenamiento-duramo-hombre-azul-js4415.webp" alt="Zapatillas Running Duramo">
+          <span class="producto-etiqueta etiqueta-descuento">-20%</span>
         </div>
         <div class="producto-info">
           <p class="producto-marca">ADIDAS</p>
           <h3 class="producto-nombre">Zapatillas Running Duramo</h3>
-          <p class="producto-precio">S/ 279.90</p>
+          <p class="producto-precio">279.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Smash Unisex" data-precio="219.90">
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Smash Unisex" data-precio="219.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado3.svg" alt="Zapatillas Smash Unisex">
+          <img src="https://triathlonperu.vtexassets.com/arquivos/ids/379887-800-800?v=638518358747100000&width=800&height=800&aspect=true" alt="Zapatillas Smash Unisex">
         </div>
         <div class="producto-info">
           <p class="producto-marca">PUMA</p>
           <h3 class="producto-nombre">Zapatillas Smash Unisex</h3>
-          <p class="producto-precio">S/ 219.90</p>
+          <p class="producto-precio">219.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="zapatos" data-nombre="Zapatos de Cuero Hombre" data-precio="249.90">
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Air Max Excee" data-precio="399.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado4.svg" alt="Zapatos de Cuero Hombre">
+          <img src="https://media.falabella.com/falabellaPE/80041456_2/w=1500,h=1500,fit=cover" alt="Zapatillas Air Max Excee">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NIKE</p>
+          <h3 class="producto-nombre">Zapatillas Air Max Excee</h3>
+          <p class="producto-precio">399.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Superstar Clásicas" data-precio="349.90">
+        <div class="producto-foto">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExITFhIWGBgYFhUYFRcWGhcVGhUYGxYVGBYYHSghGRolGxgXITEhJikrLi4uGB8zODMtNygtLisBCgoKDg0NFRAQFSsdFRotKy0tKysrNystKy03Kzc3Ky0tLS0tKy0rLTctKy0tKzcrNzc3LS0tKy0tLSstNy0tK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABAUDBgECBwj/xABAEAABAwIEAgYJAgMHBQEAAAABAAIRAyEEEjFBUWEFBhMicYEyQlKRobHB0fAHYhQj4UNygpKiwvEkM4OT0hX/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAGhEBAQEAAwEAAAAAAAAAAAAAAAERAiExEv/aAAwDAQACEQMRAD8A9xREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREHBMKK/pKmPWnwBPx0VX0jiC+o5k9xkCNiYBJPHWPJYC+FqcU1eUMexxgSDtIiVKWsUqkm2xt4rYcLXD2zvuOBSzFZkRFkEXSpVa3UgLCca3YE+UfNBJRQ2dIMJj6g/JTAUBERAREQEREBERAREQEREBERAREQEREBEUbpLFClRqVTpTY9/8AlaT9EGu4GoKmeoNHvc4eBcY+ELrXfE8lS/pri+06OoGZLWBjt+83unzkKf0jVgxxPwAn7LrESMM+ICnsxEXBgrW3YyN1lwuLzuDAdZJ8BH3CtRtdPpaLOE8xr7lzUx7nWaMo4m5+w+KrKQAUpixio9PEZyezvrL3a2cWmAdIIcJNwW+iRddOmHOo4erXFN1d9JpeKYcWl2W7spAOV2WTAEEgWXOLwrg7tafp+u0XzgACQPbAAH7gADcMcylrdX6tev8AxNPpHGtaYP8ADiu4Umm9wGxmYfZMHW4iBBjpdf8Ao6pgn4xrnRTLQ+kGjtmveYYAJgydHAlpg3sQrqv0q80KdamXdkQ17gAWu7N4BD4N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" alt="Zapatillas Superstar Clásicas">
+          <span class="producto-etiqueta etiqueta-descuento">-10%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ADIDAS</p>
+          <h3 class="producto-nombre">Zapatillas Superstar Clásicas</h3>
+          <p class="producto-precio">349.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas RS-X Reinvent" data-precio="369.90">
+        <div class="producto-foto">
+          <img src="https://triathlonperu.vtexassets.com/arquivos/ids/379890-800-800/rsx.jpg" alt="Zapatillas RS-X Reinvent">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">PUMA</p>
+          <h3 class="producto-nombre">Zapatillas RS-X Reinvent</h3>
+          <p class="producto-precio">369.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Chuck Taylor All Star" data-precio="289.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gYfl8olasfMs5u2jSxZkyk-YIGxEqwifDpLau0qvzA&s=10" alt="Zapatillas Chuck Taylor All Star">
+          <span class="producto-etiqueta etiqueta-descuento">-15%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">CONVERSE</p>
+          <h3 class="producto-nombre">Zapatillas Chuck Taylor All Star</h3>
+          <p class="producto-precio">289.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Running Fresh Foam" data-precio="419.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwEV_sMlIEJEKvrltey1OVlTn7gA5yEK97rcsRLWJ9EA&s=10" alt="Zapatillas Running Fresh Foam">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NEW BALANCE</p>
+          <h3 class="producto-nombre">Zapatillas Running Fresh Foam</h3>
+          <p class="producto-precio">419.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Forum Low" data-precio="379.90">
+        <div class="producto-foto">
+          <img src="https://www.tabas.com.pe/wp-content/uploads/2019/03/adidas-forum-low-fy7756-tabas.jpg" alt="Zapatillas Forum Low">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ADIDAS</p>
+          <h3 class="producto-nombre">Zapatillas Forum Low</h3>
+          <p class="producto-precio">379.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Air Force 1 '07" data-precio="459.90">
+        <div class="producto-foto">
+          <img src="https://media.falabella.com/falabellaPE/80041456_3/w=1500,h=1500,fit=cover" alt="Zapatillas Air Force 1 '07">
+          <span class="producto-etiqueta">TOP</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NIKE</p>
+          <h3 class="producto-nombre">Zapatillas Air Force 1 '07</h3>
+          <p class="producto-precio">459.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Suede Classic XXI" data-precio="299.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjaj_RqMuW05z9T-KewxrQTyFAqryzuoBR-3Y8Do9TYg&s=10" alt="Zapatillas Suede Classic XXI">
+          <span class="producto-etiqueta etiqueta-descuento">-12%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">PUMA</p>
+          <h3 class="producto-nombre">Zapatillas Suede Classic XXI</h3>
+          <p class="producto-precio">299.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="adulto" data-nombre="Zapatillas Old Skool Clásicas" data-precio="319.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJJ-16tWRDAVCBJYAuCmtvhkMxvJSwI0a8S8BLvyt25g&s=10" alt="Zapatillas Old Skool Clásicas">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">VANS</p>
+          <h3 class="producto-nombre">Zapatillas Old Skool Clásicas</h3>
+          <p class="producto-precio">319.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- ================= ZAPATOS ADULTO ================= -->
+
+      <article class="producto" data-categoria="zapatos" data-publico="adulto" data-nombre="Zapatos de Cuero Hombre" data-precio="249.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTau-xaJPqxf0y5quCwBRvgmcX41uxsS0VrwZ6WuK64aw&s=10" alt="Zapatos de Cuero Hombre">
         </div>
         <div class="producto-info">
           <p class="producto-marca">HUSH PUPPIES</p>
           <h3 class="producto-nombre">Zapatos de Cuero Hombre</h3>
-          <p class="producto-precio">S/ 249.90</p>
+          <p class="producto-precio">249.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="zapatos" data-nombre="Zapatos Taco Mujer" data-precio="189.90">
+      <article class="producto" data-categoria="zapatos" data-publico="adulto" data-nombre="Zapatos Taco Mujer" data-precio="189.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado5.svg" alt="Zapatos Taco Mujer">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHT3324YJcqQoWE3-BmRPp2NnBwV07DuKYluwxTaVzTEpk3uKvHDiFfjbG&s=10" alt="Zapatos Taco Mujer">
         </div>
         <div class="producto-info">
           <p class="producto-marca">VIZZANO</p>
           <h3 class="producto-nombre">Zapatos Taco Mujer</h3>
-          <p class="producto-precio">S/ 189.90</p>
+          <p class="producto-precio">189.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="sandalias" data-nombre="Sandalias Brasil" data-precio="69.90">
+      <!-- ================= SANDALIAS ADULTO ================= -->
+
+      <article class="producto" data-categoria="sandalias" data-publico="adulto" data-nombre="Sandalias Brasil" data-precio="69.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado6.svg" alt="Sandalias Brasil">
+          <img src="https://rimage.ripley.com.pe/home.ripley/Attachment/WOP/1/2026281123458/thumbnail-2026281123458.jpg" alt="Sandalias Brasil">
         </div>
         <div class="producto-info">
           <p class="producto-marca">HAVAIANAS</p>
           <h3 class="producto-nombre">Sandalias Brasil</h3>
-          <p class="producto-precio">S/ 69.90</p>
+          <p class="producto-precio">69.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="botas" data-nombre="Botines de Seguridad" data-precio="299.90">
+      <!-- ================= BOTAS ADULTO ================= -->
+
+      <article class="producto" data-categoria="botas" data-publico="adulto" data-nombre="Botines de Seguridad" data-precio="299.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado7.svg" alt="Botines de Seguridad">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVPOIbHiWPmpY_GCHNHLoiN6QgqvqKPjVe6nVw0FYOrg&s=10" alt="Botines de Seguridad">
         </div>
         <div class="producto-info">
           <p class="producto-marca">CAT</p>
           <h3 class="producto-nombre">Botines de Seguridad</h3>
-          <p class="producto-precio">S/ 299.90</p>
+          <p class="producto-precio">299.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="botas" data-nombre="Botas Mujer Caña Alta" data-precio="229.90">
+      <article class="producto" data-categoria="botas" data-publico="adulto" data-nombre="Botas Mujer Caña Alta" data-precio="229.90">
         <div class="producto-foto">
-          <img src="img/alumno6/calzado8.svg" alt="Botas Mujer Caña Alta">
-          <span class="producto-etiqueta">-15%</span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRok6TqIDosAti6yADSouBAmWM8H-bOvetw0AaatdYW6A&s" alt="Botas Mujer Caña Alta">
+          <span class="producto-etiqueta etiqueta-descuento">-15%</span>
         </div>
         <div class="producto-info">
           <p class="producto-marca">BATA</p>
           <h3 class="producto-nombre">Botas Mujer Caña Alta</h3>
-          <p class="producto-precio">S/ 229.90</p>
+          <p class="producto-precio">229.90</p>
           <select class="a6-talla" aria-label="Talla">
             <option value="">Elige tu talla</option>
-            <option>36</option><option>37</option><option>38</option><option>39</option>
-            <option>40</option><option>41</option><option>42</option><option>43</option>
+            <option>35</option><option>36</option><option>37</option><option>38</option>
+            <option>39</option><option>40</option><option>41</option><option>42</option>
+            <option>43</option><option>44</option><option>45</option>
           </select>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
+
+      <!-- ================= ZAPATILLAS NIÑO (4 casillas) ================= -->
+
+      <article class="producto" data-categoria="zapatillas" data-publico="nino" data-nombre="Zapatillas Niño Runner" data-precio="129.90">
+        <div class="producto-foto">
+          <img src="https://media.falabella.com/falabellaPE/80041456_4/w=1500,h=1500,fit=cover" alt="Zapatillas Niño Runner">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NIKE</p>
+          <h3 class="producto-nombre">Zapatillas Niño Runner</h3>
+          <p class="producto-precio">129.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>20</option><option>21</option><option>22</option><option>23</option>
+            <option>24</option><option>25</option><option>26</option><option>27</option>
+            <option>28</option><option>29</option><option>30</option><option>31</option>
+            <option>32</option><option>33</option><option>34</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="nino" data-nombre="Zapatillas Niño Color Play" data-precio="119.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJJ-16tWRDAVCBJYAuCmtvhkMxvJSwI0a8S8BLvyt25g&s=10" alt="Zapatillas Niño Color Play">
+          <span class="producto-etiqueta etiqueta-descuento">-10%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">PUMA</p>
+          <h3 class="producto-nombre">Zapatillas Niño Color Play</h3>
+          <p class="producto-precio">119.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>20</option><option>21</option><option>22</option><option>23</option>
+            <option>24</option><option>25</option><option>26</option><option>27</option>
+            <option>28</option><option>29</option><option>30</option><option>31</option>
+            <option>32</option><option>33</option><option>34</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="nino" data-nombre="Zapatillas Niño Skate" data-precio="139.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gYfl8olasfMs5u2jSxZkyk-YIGxEqwifDpLau0qvzA&s=10" alt="Zapatillas Niño Skate">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">VANS</p>
+          <h3 class="producto-nombre">Zapatillas Niño Skate</h3>
+          <p class="producto-precio">139.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>20</option><option>21</option><option>22</option><option>23</option>
+            <option>24</option><option>25</option><option>26</option><option>27</option>
+            <option>28</option><option>29</option><option>30</option><option>31</option>
+            <option>32</option><option>33</option><option>34</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <article class="producto" data-categoria="zapatillas" data-publico="nino" data-nombre="Zapatillas Niño Aventura" data-precio="149.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwEV_sMlIEJEKvrltey1OVlTn7gA5yEK97rcsRLWJ9EA&s=10" alt="Zapatillas Niño Aventura">
+          <span class="producto-etiqueta etiqueta-descuento">-12%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">NEW BALANCE</p>
+          <h3 class="producto-nombre">Zapatillas Niño Aventura</h3>
+          <p class="producto-precio">149.90</p>
+          <select class="a6-talla" aria-label="Talla">
+            <option value="">Elige tu talla</option>
+            <option>20</option><option>21</option><option>22</option><option>23</option>
+            <option>24</option><option>25</option><option>26</option><option>27</option>
+            <option>28</option><option>29</option><option>30</option><option>31</option>
+            <option>32</option><option>33</option><option>34</option>
+          </select>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
+
+<script>
+// ALUMNO 6 - Filtros (categoría) y talla obligatoria
+(() => {
+  const seccion = document.getElementById('calzado');
+  const filtros = seccion.querySelectorAll('.filtro');
+  const productos = seccion.querySelectorAll('.producto');
+
+  filtros.forEach(boton => {
+    boton.addEventListener('click', () => {
+      filtros.forEach(b => b.classList.remove('activo'));
+      boton.classList.add('activo');
+      const filtro = boton.dataset.filtro;
+
+      productos.forEach(p => {
+        let mostrar = false;
+        if (filtro === 'todo') mostrar = true;
+        else mostrar = p.dataset.categoria === filtro;
+        p.classList.toggle('oculto', !mostrar);
+      });
+    });
+  });
+
+  seccion.querySelectorAll('.btn-agregar').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const p = boton.closest('.producto');
+      const select = p.querySelector('.a6-talla');
+      if (select.value === '') {
+        select.classList.add('a6-error');
+        if (typeof mostrarToast === 'function') mostrarToast('⚠️ Elige tu talla de calzado');
+        return;
+      }
+      select.classList.remove('a6-error');
+      if (typeof agregarAlCarrito === 'function') {
+        agregarAlCarrito(p.dataset.nombre + ' (Talla ' + select.value + ')', p.dataset.precio);
+      }
+    });
+  });
+
+  seccion.querySelectorAll('.a6-talla').forEach(s => {
+    s.addEventListener('change', () => s.classList.remove('a6-error'));
+  });
+})();
+</script>
+
+</body>
+</html>
