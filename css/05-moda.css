@@ -1,123 +1,259 @@
-/* ALUMNO 5 - Moda. Usa SOLO clases .a5- */
+/* =======================================================
+   ALUMNO 5 - MODA (Diseño Super Mejorado y Colorido)
+   ======================================================= */
 
-/* 1. Fondo llamativo (Azul Cian Eléctrico) */
+/* 1. Fondo llamativo con degradado suave (Lila a Melocotón) */
 .a5-seccion { 
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%) !important; 
-    padding: 60px 0;
-    border-top: 8px solid #e91e63; /* Borde superior fucsia para resaltar */
-    border-bottom: 8px solid #e91e63;
-    margin: 40px 0;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%) !important; 
+    padding: 70px 0;
+    border-radius: 30px;
+    margin: 40px auto;
+    max-width: 95%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* 2. Título y subtítulo de la sección */
+/* 2. Título principal con sombra de color */
 .a5-seccion .depto-titulo {
-    color: #006064 !important; /* Azul oscuro para contrastar */
-}
-.a5-seccion .depto-subtitulo {
-    color: #00838f !important;
+    color: #2d3436 !important;
+    font-weight: 900;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 0px #fdcb6e;
 }
 
-/* 3. Pintar los filtros de color */
+.a5-seccion .depto-subtitulo {
+    color: #2d3436 !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* 3. Filtros estilo "Burbuja" */
 .a5-seccion .filtro {
-    border: 2px solid #00bcd4 !important; /* Borde cian */
-    color: #00838f !important;
+    border: none !important;
     background: #ffffff !important;
-    border-radius: 25px !important;
-    font-weight: 700;
-    transition: 0.3s;
+    color: #6c5ce7 !important;
+    border-radius: 30px !important;
+    font-weight: 800;
+    padding: 10px 25px;
+    margin: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
 }
 
 .a5-seccion .filtro:hover,
 .a5-seccion .filtro.activo {
-    background: #00bcd4 !important; /* El filtro activo se vuelve cian brillante */
+    background: #6c5ce7 !important;
     color: #ffffff !important;
-    border-color: #00bcd4 !important;
-    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+    box-shadow: 0 6px 15px rgba(108, 92, 231, 0.4);
+    transform: translateY(-3px);
 }
 
-/* 4. Estilo para la Guía de Tallas (Boton fucsia) */
+/* 4. Botón de Guía de Tallas */
 .a5-guia-tallas {
-    font-family: inherit;
-    cursor: pointer;
-    transition: 0.3s;
-    background: #e91e63 !important;
+    background: #fd79a8 !important;
     color: white !important;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 800;
     text-decoration: none !important;
-    font-size: 0.9rem;
-    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+    transition: 0.3s;
     display: inline-block;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
 }
 .a5-guia-tallas:hover {
-    background: #c2185b !important;
-    transform: scale(1.05);
+    background: #e84393 !important;
+    transform: scale(1.05) rotate(-2deg);
 }
 
-/* 5. Tarjetas de producto (Blancas para que resalten en el fondo azul) */
+/* 5. Tarjetas de Producto */
 .a5-seccion .producto {
-    background: #ffffff !important;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 188, 212, 0.2);
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
     overflow: hidden;
 }
+
 .a5-seccion .producto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 188, 212, 0.3);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(108, 92, 231, 0.25);
+    border-color: #a29bfe;
 }
 
-/* 6. Contenedor de las tallas */
+/* 6. Etiquetas de ofertas */
+.a5-seccion .producto-etiqueta {
+    background: linear-gradient(45deg, #ff7675, #d63031) !important;
+    color: white !important;
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(214, 48, 49, 0.4);
+    transform: rotate(5deg);
+}
+
+/* 7. Imágenes con zoom */
+.a5-seccion .producto-foto img {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.a5-seccion .producto:hover .producto-foto img {
+    transform: scale(1.15);
+}
+
+/* 8. Botones de Talla */
 .a5-tallas { 
     display: flex; 
     gap: 8px; 
     flex-wrap: wrap;
     margin-bottom: 15px;
+    justify-content: center;
 }
 
-/* 7. Botones de talla */
 .a5-tallas button { 
-    min-width: 38px; 
-    height: 34px; 
-    border: 1px solid #ccc; 
-    background: #f8f9fa; 
-    border-radius: 8px; 
+    min-width: 42px; 
+    height: 40px; 
+    border: 2px solid #dfe6e9; 
+    background: #ffffff; 
+    border-radius: 12px; 
     cursor: pointer; 
-    font-size: .85rem; 
-    font-weight: 600;
-    color: #444;
+    font-size: .9rem; 
+    font-weight: 700;
+    color: #636e72;
     transition: all 0.2s ease; 
 }
 
 .a5-tallas button:hover { 
-    border-color: #e91e63; 
-    color: #e91e63;
+    border-color: #fd79a8; 
+    color: #fd79a8;
+    transform: translateY(-2px);
 }
 
-/* 8. Botón de Talla Activo (Fucsia) */
 .a5-tallas button.activo { 
-    background: #e91e63 !important;
+    background: #6c5ce7 !important; 
     color: #fff !important; 
-    border-color: #e91e63 !important; 
+    border-color: #6c5ce7 !important; 
     transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.4);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
 }
 
 /* 9. Botón de Agregar al Carro */
 .a5-seccion .btn-agregar {
-    background: #006064 !important; /* Azul oscuro profundo */
-    color: white !important;
-    border-radius: 8px !important;
-    font-weight: 600;
-    transition: 0.3s;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%) !important;
+    color: #d63031 !important;
+    border-radius: 15px !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 14px;
     border: none;
     width: 100%;
-    padding: 10px;
     cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 154, 158, 0.4);
 }
 .a5-seccion .btn-agregar:hover {
-    background: #00bcd4 !important; /* Cambia a cian brillante al pasar el mouse */
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%) !important;
+    color: white !important;
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 10. Información del producto */
+.a5-seccion .producto-marca {
+    color: #b2bec3;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.a5-seccion .producto-nombre {
+    font-weight: 800;
+    color: #2d3436;
+    font-size: 1.1rem;
+}
+.a5-seccion .producto-precio {
+    color: #d63031;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+/* 11. Botón de Favoritos (Corazón) */
+.a5-seccion .btn-favorito {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    z-index: 10;
+}
+.a5-seccion .btn-favorito:hover {
+    transform: scale(1.1);
+}
+.a5-seccion .btn-favorito.active {
+    background: #ffe3e3;
+    animation: latido 0.5s;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* 12. Calificación y Envío */
+.a5-seccion .producto-detalles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+.a5-seccion .producto-estrellas {
+    color: #fdcb6e;
+    font-weight: 600;
+}
+.a5-seccion .producto-estrellas small {
+    color: #b2bec3;
+}
+.a5-seccion .producto-envio {
+    color: #00b894;
+    font-weight: 700;
+}
+
+/* 13. Descripción corta */
+.a5-seccion .producto-descripcion {
+    font-size: 0.8rem;
+    color: #636e72;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 14. Aviso de Stock */
+.a5-seccion .producto-stock {
+    font-size: 0.75rem;
+    color: #d63031;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
 }
