@@ -1,11 +1,11 @@
 <!-- ======================= ALUMNO 1: HEADER + BUSCADOR + CARRITO + BANNER ======================= -->
 <div class="a1-top">
   <div class="contenedor a1-top-fila">
-    <span>📦 Despacho gratis por compras desde S/ 99</span>
+    <span>📦 Envío gratis en compras desde S/ 99 | Atención 24/7</span>
     <nav>
-      <a href="#ayuda">Tiendas</a>
+      <a href="#tiendas">Tiendas</a>
       <a href="#ayuda">Ayuda</a>
-      <a href="#ayuda">Vende con nosotros</a>
+      <a href="#vende">Vende con nosotros</a>
     </nav>
   </div>
 </div>
@@ -17,8 +17,10 @@
     <button class="a1-menu-btn" aria-label="Menú de categorías">☰ <span>Menú</span></button>
 
     <!-- Buscador: busca en los nombres de TODOS los productos de la página -->
-    <form class="a1-buscador" id="a1-buscador">
-      <input type="search" id="a1-busqueda" placeholder="¿Qué buscas hoy?">
+    <form class="a1-buscador" id="a1-buscador" role="search">
+      <input type="search" id="a1-busqueda"
+             placeholder="Busca laptops, zapatillas, perfumes..."
+             aria-label="Buscar productos">
       <button type="submit" aria-label="Buscar">🔍</button>
     </form>
 
@@ -41,7 +43,7 @@
 </header>
 
 <!-- Panel lateral del carro -->
-<aside class="a1-panel" id="a1-panel">
+<aside class="a1-panel" id="a1-panel" aria-label="Carrito de compras">
   <div class="a1-panel-cabecera">
     <h3>Mi carro</h3>
     <button class="a1-cerrar" aria-label="Cerrar">✕</button>
@@ -51,34 +53,53 @@
   </ul>
   <div class="a1-total">Total: <strong id="a1-total">S/ 0.00</strong></div>
   <a href="#ayuda" class="btn a1-comprar">Ir a pagar</a>
+  <!-- RETO EXTRA: Vaciar carro -->
+  <button type="button" id="a1-vaciar" class="a1-vaciar">🗑️ Vaciar carro</button>
 </aside>
 
 <!-- BANNER DESLIZANTE -->
-<section class="a1-banner">
+<section class="a1-banner" aria-label="Promociones destacadas">
   <div class="a1-slide activo">
-    <img src="img/alumno1/banner1.svg" alt="Semana de la tecnología">
+    <img src="img/alumno1/banner-tecnologia.jpg"
+         alt="Semana de la tecnología: hasta 40% de descuento en laptops y celulares">
     <div class="a1-texto">
       <p class="a1-mini">SEMANA TECNO</p>
       <h1>Hasta 40% dcto.<br>en laptops y celulares</h1>
       <a href="#tecnologia" class="btn btn-blanco">Ver ofertas</a>
     </div>
   </div>
+
   <div class="a1-slide">
-    <img src="img/alumno1/banner2.svg" alt="Electrohogar">
+    <img src="img/alumno1/banner-electrohogar.jpg"
+         alt="Electrohogar: refrigeradoras y lavadoras hasta en 24 cuotas">
     <div class="a1-texto">
       <p class="a1-mini">RENUEVA TU HOGAR</p>
       <h1>Refris y lavadoras<br>hasta 24 cuotas</h1>
       <a href="#electro" class="btn btn-blanco">Comprar ahora</a>
     </div>
   </div>
+
   <div class="a1-slide">
-    <img src="img/alumno1/banner3.svg" alt="Moda">
+    <img src="img/alumno1/banner-moda.jpg"
+         alt="Moda de verano: nueva temporada desde S/ 29.90">
     <div class="a1-texto">
       <p class="a1-mini">NUEVA TEMPORADA</p>
       <h1>Moda de verano<br>desde S/ 29.90</h1>
       <a href="#moda" class="btn btn-blanco">Descubrir</a>
     </div>
   </div>
+
+  <!-- RETO EXTRA: 4.º slide -->
+  <div class="a1-slide">
+    <img src="img/alumno1/banner-deporte.jpg"
+         alt="Deporte y aire libre: hasta 30% en zapatillas y ropa deportiva">
+    <div class="a1-texto">
+      <p class="a1-mini">MODO DEPORTE</p>
+      <h1>Entrena con estilo<br>hasta 30% dcto.</h1>
+      <a href="#deporte" class="btn btn-blanco">Ver más</a>
+    </div>
+  </div>
+
   <button class="a1-flecha a1-prev" aria-label="Anterior">‹</button>
   <button class="a1-flecha a1-next" aria-label="Siguiente">›</button>
   <div class="a1-puntos"></div>
