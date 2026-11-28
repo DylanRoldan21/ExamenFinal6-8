@@ -1,3 +1,4 @@
+
 // ALUMNO 4 - Filtros, contador de productos y ordenar por precio
 (() => {
   const seccion = document.getElementById('electro');
@@ -30,6 +31,7 @@
     lista.sort((a, b) => {
       if (opcion === 'menor') return a.dataset.precio - b.dataset.precio;
       if (opcion === 'mayor') return b.dataset.precio - a.dataset.precio;
+      if (opcion === 'nombre') return a.dataset.nombre.localeCompare(b.dataset.nombre);
       return a.dataset.orden - b.dataset.orden;
     });
     lista.forEach(p => grid.appendChild(p));

@@ -4,25 +4,27 @@
     <div class="depto-cabecera">
       <div>
         <h2 class="depto-titulo">🧊 Electrohogar</h2>
-        <p class="depto-subtitulo">Refrigeradoras, lavadoras, cocinas y pequeños electrodomésticos.</p>
+        <p class="depto-subtitulo">Refrigeradoras, lavado, cocina y pequeños electrodomésticos.</p>
       </div>
       <a href="#inicio" class="ver-todo">Volver arriba ↑</a>
     </div>
 
     <div class="a4-barra">
-    <div class="filtros">
-      <button class="filtro activo" data-filtro="todo">Todo</button>
-      <button class="filtro" data-filtro="refrigeradoras">Refrigeradoras</button>
-      <button class="filtro" data-filtro="lavado">Lavado</button>
-      <button class="filtro" data-filtro="cocina">Cocina</button>
-      <button class="filtro" data-filtro="pequenos">Pequeños electro</button>
-    </div>
+      <div class="filtros">
+        <button class="filtro activo" data-filtro="todo">Todo</button>
+        <button class="filtro" data-filtro="refrigeradoras">Refrigeradoras</button>
+        <button class="filtro" data-filtro="lavado">Lavado</button>
+        <button class="filtro" data-filtro="cocina">Cocina</button>
+        <button class="filtro" data-filtro="pequenos">Pequeños electro</button>
+        <button class="filtro" data-filtro="climatizacion">Climatización</button>
+      </div>
       <div class="a4-orden">
-        <span class="a4-cantidad" id="a4-cantidad">8 productos</span>
+        <span class="a4-cantidad" id="a4-cantidad">12 productos</span>
         <select id="a4-orden" aria-label="Ordenar">
           <option value="normal">Recomendados</option>
           <option value="menor">Precio: menor a mayor</option>
           <option value="mayor">Precio: mayor a menor</option>
+          <option value="nombre">Nombre A-Z</option>
         </select>
       </div>
     </div>
@@ -37,100 +39,162 @@
     -->
     <!-- data-orden = posición original (1, 2, 3...). Si agregas productos, continúa la numeración. -->
     <div class="grid-productos" id="a4-grid">
-      <article class="producto" data-categoria="refrigeradoras" data-nombre="Refrigeradora No Frost 420L" data-precio="2299.00" data-orden="1">
+      <!-- 1. Licuadora -->
+      <article class="producto" data-categoria="pequenos" data-nombre="Licuadora Oster 1.5L 600W" data-precio="199.00" data-orden="1">
         <div class="producto-foto">
-          <img src="img/alumno4/electro1.svg" alt="Refrigeradora No Frost 420L">
-          <span class="producto-etiqueta">-20%</span>
-        </div>
-        <div class="producto-info">
-          <p class="producto-marca">LG</p>
-          <h3 class="producto-nombre">Refrigeradora No Frost 420L</h3>
-          <p class="producto-precio">S/ 2299.00</p>
-          <button class="btn-agregar">Agregar al carro</button>
-        </div>
-      </article>
-
-      <article class="producto" data-categoria="refrigeradoras" data-nombre="Refrigeradora Side by Side 600L" data-precio="4599.00" data-orden="2">
-        <div class="producto-foto">
-          <img src="img/alumno4/electro2.svg" alt="Refrigeradora Side by Side 600L">
-        </div>
-        <div class="producto-info">
-          <p class="producto-marca">SAMSUNG</p>
-          <h3 class="producto-nombre">Refrigeradora Side by Side 600L</h3>
-          <p class="producto-precio">S/ 4599.00</p>
-          <button class="btn-agregar">Agregar al carro</button>
-        </div>
-      </article>
-
-      <article class="producto" data-categoria="lavado" data-nombre="Lavadora Carga Superior 18kg" data-precio="1499.00" data-orden="3">
-        <div class="producto-foto">
-          <img src="img/alumno4/electro3.svg" alt="Lavadora Carga Superior 18kg">
-        </div>
-        <div class="producto-info">
-          <p class="producto-marca">WHIRLPOOL</p>
-          <h3 class="producto-nombre">Lavadora Carga Superior 18kg</h3>
-          <p class="producto-precio">S/ 1499.00</p>
-          <button class="btn-agregar">Agregar al carro</button>
-        </div>
-      </article>
-
-      <article class="producto" data-categoria="lavado" data-nombre="Lavaseca 17kg Inverter" data-precio="2799.00" data-orden="4">
-        <div class="producto-foto">
-          <img src="img/alumno4/electro4.svg" alt="Lavaseca 17kg Inverter">
-          <span class="producto-etiqueta">NUEVO</span>
-        </div>
-        <div class="producto-info">
-          <p class="producto-marca">MABE</p>
-          <h3 class="producto-nombre">Lavaseca 17kg Inverter</h3>
-          <p class="producto-precio">S/ 2799.00</p>
-          <button class="btn-agregar">Agregar al carro</button>
-        </div>
-      </article>
-
-      <article class="producto" data-categoria="cocina" data-nombre="Cocina a Gas 6 Hornillas" data-precio="1199.00" data-orden="5">
-        <div class="producto-foto">
-          <img src="img/alumno4/electro5.svg" alt="Cocina a Gas 6 Hornillas">
-        </div>
-        <div class="producto-info">
-          <p class="producto-marca">INDURAMA</p>
-          <h3 class="producto-nombre">Cocina a Gas 6 Hornillas</h3>
-          <p class="producto-precio">S/ 1199.00</p>
-          <button class="btn-agregar">Agregar al carro</button>
-        </div>
-      </article>
-
-      <article class="producto" data-categoria="cocina" data-nombre="Microondas 25L Digital" data-precio="379.00" data-orden="6">
-        <div class="producto-foto">
-          <img src="img/alumno4/electro6.svg" alt="Microondas 25L Digital">
-        </div>
-        <div class="producto-info">
-          <p class="producto-marca">OSTER</p>
-          <h3 class="producto-nombre">Microondas 25L Digital</h3>
-          <p class="producto-precio">S/ 379.00</p>
-          <button class="btn-agregar">Agregar al carro</button>
-        </div>
-      </article>
-
-      <article class="producto" data-categoria="pequenos" data-nombre="Licuadora 1.5L 600W" data-precio="199.00" data-orden="7">
-        <div class="producto-foto">
-          <img src="img/alumno4/electro7.svg" alt="Licuadora 1.5L 600W">
+          <img src="img/alumno4/electro1.jpg" alt="Licuadora Oster 1.5L 600W">
           <span class="producto-etiqueta">-10%</span>
         </div>
         <div class="producto-info">
           <p class="producto-marca">OSTER</p>
-          <h3 class="producto-nombre">Licuadora 1.5L 600W</h3>
+          <h3 class="producto-nombre">Licuadora Oster 1.5L 600W</h3>
           <p class="producto-precio">S/ 199.00</p>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
       </article>
 
-      <article class="producto" data-categoria="pequenos" data-nombre="Freidora de Aire 4L" data-precio="259.00" data-orden="8">
+      <!-- 2. Cocina a gas -->
+      <article class="producto" data-categoria="cocina" data-nombre="Cocina a Gas Indurama 6 Hornillas" data-precio="1199.00" data-orden="2">
         <div class="producto-foto">
-          <img src="img/alumno4/electro8.svg" alt="Freidora de Aire 4L">
+          <img src="img/alumno4/electro2.jpg" alt="Cocina a Gas Indurama 6 Hornillas">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">INDURAMA</p>
+          <h3 class="producto-nombre">Cocina a Gas Indurama 6 Hornillas</h3>
+          <p class="producto-precio">S/ 1199.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 3. Cafetera -->
+      <article class="producto" data-categoria="pequenos" data-nombre="Cafetera Oster 12 Tazas" data-precio="149.00" data-orden="3">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro3.jpg" alt="Cafetera Oster 12 Tazas">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">OSTER</p>
+          <h3 class="producto-nombre">Cafetera Oster 12 Tazas</h3>
+          <p class="producto-precio">S/ 149.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 4. Refrigeradora -->
+      <article class="producto" data-categoria="refrigeradoras" data-nombre="Refrigeradora LG No Frost 420L" data-precio="2299.00" data-orden="4">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro4.jpg" alt="Refrigeradora LG No Frost 420L">
+          <span class="producto-etiqueta">-20%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">LG</p>
+          <h3 class="producto-nombre">Refrigeradora LG No Frost 420L</h3>
+          <p class="producto-precio">S/ 2299.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 5. Secadora de pelo -->
+      <article class="producto" data-categoria="pequenos" data-nombre="Secadora de Pelo Remington 1875W" data-precio="129.00" data-orden="5">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro5.jpg" alt="Secadora de Pelo Remington 1875W">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">REMINGTON</p>
+          <h3 class="producto-nombre">Secadora de Pelo Remington 1875W</h3>
+          <p class="producto-precio">S/ 129.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 6. Aspiradora -->
+      <article class="producto" data-categoria="pequenos" data-nombre="Aspiradora Electrolux 1600W" data-precio="349.00" data-orden="6">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro6.jpg" alt="Aspiradora Electrolux 1600W">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">ELECTROLUX</p>
+          <h3 class="producto-nombre">Aspiradora Electrolux 1600W</h3>
+          <p class="producto-precio">S/ 349.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 7. Microondas -->
+      <article class="producto" data-categoria="cocina" data-nombre="Microondas Oster 25L Digital" data-precio="379.00" data-orden="7">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro7.jpg" alt="Microondas Oster 25L Digital">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">OSTER</p>
+          <h3 class="producto-nombre">Microondas Oster 25L Digital</h3>
+          <p class="producto-precio">S/ 379.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 8. Tostadora -->
+      <article class="producto" data-categoria="pequenos" data-nombre="Tostadora Oster 2 Ranuras" data-precio="89.00" data-orden="8">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro8.jpg" alt="Tostadora Oster 2 Ranuras">
+          <span class="producto-etiqueta">-15%</span>
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">OSTER</p>
+          <h3 class="producto-nombre">Tostadora Oster 2 Ranuras</h3>
+          <p class="producto-precio">S/ 89.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 9. Lavadora (nuevo) -->
+      <article class="producto" data-categoria="lavado" data-nombre="Lavadora Whirlpool Carga Superior 18kg" data-precio="1499.00" data-orden="9">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro9.jpg" alt="Lavadora Whirlpool Carga Superior 18kg">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">WHIRLPOOL</p>
+          <h3 class="producto-nombre">Lavadora Whirlpool Carga Superior 18kg</h3>
+          <p class="producto-precio">S/ 1499.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 10. Waflera (nuevo) -->
+<article class="producto" data-categoria="pequenos" data-nombre="Waflera Oster Antiadherente" data-precio="189.00" data-orden="10">
+  <div class="producto-foto">
+    <img src="img/alumno4/electro10.jpg" alt="Waflera Oster Antiadherente">
+    <span class="producto-etiqueta">NUEVO</span>
+  </div>
+  <div class="producto-info">
+    <p class="producto-marca">OSTER</p>
+    <h3 class="producto-nombre">Waflera Oster Antiadherente</h3>
+    <p class="producto-precio">S/ 189.00</p>
+    <button class="btn-agregar">Agregar al carro</button>
+  </div>
+</article>
+
+      <!-- 11. Lavaseca (nuevo) -->
+      <article class="producto" data-categoria="lavado" data-nombre="Lavaseca Mabe 17kg Inverter" data-precio="2799.00" data-orden="11">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro11.jpg" alt="Lavaseca Mabe 17kg Inverter">
+        </div>
+        <div class="producto-info">
+          <p class="producto-marca">MABE</p>
+          <h3 class="producto-nombre">Lavaseca Mabe 17kg Inverter</h3>
+          <p class="producto-precio">S/ 2799.00</p>
+          <button class="btn-agregar">Agregar al carro</button>
+        </div>
+      </article>
+
+      <!-- 12. Freidora de aire (nuevo) -->
+      <article class="producto" data-categoria="pequenos" data-nombre="Freidora de Aire Imaco 4L" data-precio="259.00" data-orden="12">
+        <div class="producto-foto">
+          <img src="img/alumno4/electro12.jpg" alt="Freidora de Aire Imaco 4L">
         </div>
         <div class="producto-info">
           <p class="producto-marca">IMACO</p>
-          <h3 class="producto-nombre">Freidora de Aire 4L</h3>
+          <h3 class="producto-nombre">Freidora de Aire Imaco 4L</h3>
           <p class="producto-precio">S/ 259.00</p>
           <button class="btn-agregar">Agregar al carro</button>
         </div>
