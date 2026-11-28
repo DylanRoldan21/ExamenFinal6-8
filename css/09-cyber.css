@@ -7,7 +7,6 @@
   overflow: hidden;
 }
 
-/* Fondo animado sutil */
 .a9-seccion::before {
   content: '';
   position: absolute;
@@ -88,10 +87,7 @@
 }
 
 /* Contador tipo cristal */
-.a9-contador { 
-  display: flex; 
-  gap: 12px; 
-}
+.a9-contador { display: flex; gap: 12px; }
 .a9-contador div { 
   background: rgba(255, 255, 255, 0.15); 
   backdrop-filter: blur(10px);
@@ -122,18 +118,8 @@
 }
 
 /* Precios */
-.a9-ahora { 
-  color: var(--rojo); 
-  font-size: 1.6rem;
-  font-weight: 900;
-}
-.a9-antes { 
-  color: var(--gris); 
-  text-decoration: line-through; 
-  font-size: .9rem; 
-  display: block;
-  margin-bottom: 2px;
-}
+.a9-ahora { color: var(--rojo); font-size: 1.6rem; font-weight: 900; }
+.a9-antes { color: var(--gris); text-decoration: line-through; font-size: .9rem; display: block; margin-bottom: 2px; }
 
 /* Etiqueta de descuento flotante */
 .a9-descuento { 
@@ -150,7 +136,6 @@
   z-index: 10;
   animation: flotar 2s infinite ease-in-out;
 }
-
 @keyframes flotar {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
@@ -169,7 +154,7 @@
   border-left: 4px solid #2e9e4a;
 }
 
-/* Barra de stock con animación */
+/* Barra de stock */
 .a9-stock { 
   height: 10px; 
   background: #eee; 
@@ -191,9 +176,10 @@
   color: var(--rojo); 
   margin-top: 5px;
   text-transform: uppercase;
+  transition: color 0.3s;
 }
 
-/* Botón de compra con pulso */
+/* Botón de compra */
 .a9-seccion .btn-agregar { 
   background: var(--rojo); 
   color: #fff;
@@ -207,16 +193,95 @@
   transition: all 0.3s;
   animation: pulso 2s infinite;
 }
-
 .a9-seccion .btn-agregar:hover { 
   background: #a8001f; 
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(228, 0, 43, 0.6);
   animation: none;
 }
-
 @keyframes pulso {
   0% { box-shadow: 0 0 0 0 rgba(228, 0, 43, 0.7); }
   70% { box-shadow: 0 0 0 10px rgba(228, 0, 43, 0); }
   100% { box-shadow: 0 0 0 0 rgba(228, 0, 43, 0); }
 }
+
+/* Efecto visual cuando un producto está agotado */
+.a9-seccion .producto.a9-agotado .producto-foto img {
+  filter: grayscale(100%) opacity(0.4);
+  transition: all 0.5s ease;
+}
+
+.a9-seccion .producto.a9-agotado .producto-foto::after {
+  content: 'AGOTADO';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  z-index: 5;
+}
+
+.a9-seccion .producto.a9-agotado {
+  opacity: 0.8;
+  pointer-events: none;
+}
+.a9-seccion .producto.a9-agotado .btn-agregar {
+  background: #666;
+  animation: none;
+}
+
+/* Estilos del Modal */
+.a9-modal {
+  border: 0;
+  border-radius: 16px;
+  padding: 0;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  background: #fff;
+  color: var(--oscuro);
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+.a9-modal::backdrop {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+}
+.a9-modal img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #f9f9f9;
+  padding: 20px;
+}
+.a9-modal-info { padding: 24px; }
+.a9-modal-info h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--rojo); }
+.a9-modal-info p { color: var(--gris); font-size: .95rem; line-height: 1.5; }
+.a9-modal-precio { font-size: 1.8rem; font-weight: 900; color: var(--rojo); margin-top: 15px; }
+.a9-modal-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 1rem;
+}
+.a9-modal-cerrar:hover { background: var(--rojo); }
